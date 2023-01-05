@@ -25,14 +25,12 @@
       "id": 4
     }
   ],
-  "comments": [
+  "AdminLogin": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "userName": "admin",
+      "password": "admin123"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
+ 
 }

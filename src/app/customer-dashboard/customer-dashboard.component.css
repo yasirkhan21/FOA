@@ -45,8 +45,12 @@ max-width: 400px;
 height:100px;
 margin: 10px;
 
-}
 
+}
+.mat-card{
+    float: left;
+    margin: 20px;
+}
 mat-card-subtitle {
 font-size: 18px;
 }

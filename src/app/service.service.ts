@@ -15,4 +15,7 @@ export class ServiceService {
   getProduct():Observable<any[]>{
     return this.http.get<any[]>(this.url+"/products")
   }
+  getAdmin(){
+    return this.http.get<any>(this.url+"/adminLogin")
+  }
 }
