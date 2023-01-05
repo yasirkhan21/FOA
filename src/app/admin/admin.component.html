@@ -1,6 +1,6 @@
 <div class="adminLogin">
     <h1><strong>Admin Login</strong></h1>
-<form>
+<form [formGroup]="admin">
 
     <mat-form-field appearance="fill">
         <mat-label>Enter User Name </mat-label>
@@ -9,7 +9,7 @@
         type="text"
         matInput
         placeholder="User Name"
-        
+        formControlName="userName"
         />
        
     </mat-form-field><br>
@@ -19,6 +19,8 @@
         <input
         matInput
         [type]="hide ? 'password' : 'text'"
+        type="password"
+        formControlName="password"
         />
         <button
         mat-icon-button
