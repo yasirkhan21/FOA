@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "productName": "Biryani",
-      "productImg": "https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg",
-      "price": "200"
-    },
-    {
       "productName": "Paneer Tikka",
       "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
       "price": "250",
@@ -23,6 +17,30 @@
       "productImg": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "199",
       "id": 4
+    },
+    {
+      "productName": "Biryani",
+      "productImg": "https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg",
+      "price": "195",
+      "id": 5
+    },
+    {
+      "productName": "Chole Bhature",
+      "productImg": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
+      "price": "180",
+      "id": 6
+    },
+    {
+      "productName": "Khichdi",
+      "productImg": "https://c.ndtvimg.com/2022-03/j5jbs6g_khichdi_625x300_25_March_22.jpg",
+      "price": "149",
+      "id": 7
+    },
+    {
+      "productName": "Veg Thali",
+      "productImg": "https://b.zmtcdn.com/data/pictures/7/113797/740f0113f749cbde02181585993b0e05.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+      "price": "249",
+      "id": 8
     }
   ],
   "register": [
@@ -85,11 +103,25 @@
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "userName": "admin",
+      "password": "admin123"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "Resturants": [
+    {
+      "resName": "Apna Sweets",
+      "resImg": "https://img.freepik.com/free-photo/top-view-bowls-with-indian-food_23-2148723454.jpg?size=626&ext=jpg&ga=GA1.2.1945261188.1672254184",
+      "id": 1
+    },
+    {
+      "resName": "Guru Kripa",
+      "resImg": "https://img.freepik.com/free-photo/nutritious-indian-dosa-composition_23-2149086067.jpg?size=626&ext=jpg&ga=GA1.2.1945261188.1672254184",
+      "id": 2
+    },
+    {
+      "resName": "Revalution",
+      "resImg": "https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?size=626&ext=jpg&ga=GA1.1.1945261188.1672254184",
+      "id": 3
+    }
+  ]
 }

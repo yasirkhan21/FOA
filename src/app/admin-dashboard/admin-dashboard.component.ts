@@ -30,4 +30,14 @@ addFood(){
   window.location.reload();
   }
 }
+
+deleteProduct(id:number){
+  this.cs.deleteProduct(id).subscribe();
+  alert("Product deleted")
+  window.location.reload();
+}
+
+updateProduct(product:any){
+
+}
 }

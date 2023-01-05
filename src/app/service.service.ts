@@ -15,6 +15,22 @@ export class ServiceService {
   getProduct():Observable<any[]>{
     return this.http.get<any[]>(this.url+"/products")
   }
+  getAdmin(){
+    return this.http.get<any>(this.url+"/adminLogin")
+  }
+  deleteProduct(id:number){
+    return this.http.delete(this.url+"/products/"+id)
+  }
+
+  updateProduct(id:number,product:any){
+    return this.http.put(this.url+"/products"+id,product)
+  }
+
+  getResturants():Observable<any[]>{
+    return this.http.get<any[]>(this.url+"/Resturants")
+  }
+
+}
   registerSave(data:any)
   {
     return this.http.post<any>(this.url+"/register",data)
