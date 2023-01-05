@@ -11,6 +11,6 @@ export class AdminComponent {
   constructor(private route: Router) { }
   hide: boolean = false;
   adminLogin() {
-    this.route.navigate(['/admin-dashboard']);
+    this.route.navigate(['/customer-dashboard']);
   }
 }

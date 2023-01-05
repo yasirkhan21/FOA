@@ -1,0 +1,58 @@
+<div>
+    <mat-toolbar color="accent" style="background-color: #61aee9;" class="example-toolbar">      
+        <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	
+        <h1 style="color: white; text-align: center; padding-top: 1em; font-family: 'Franklin Gothic Medium';">Hungrezy <mat-icon >restaurant</mat-icon></h1>
+        
+        <button mat-button style="margin-left: 80%; background-color:#d82e0f;">Login</button>
+        
+      
+    </mat-toolbar>
+    <mat-sidenav-container class="example-container" autosize>
+        <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+            <mat-nav-list>
+                <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+                    <span class="full-width" *ngIf="isExpanded || isShowing"><mat-icon mat-list-icon>home</mat-icon>Home </span>
+                    
+                    <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+                </mat-list-item>
+                <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+                    
+                    <span><a mat-list-item href="/signUp" onclick="signUp"><mat-icon>account_circle</mat-icon>Admin</a></span>
+                    
+                    
+                </div>
+            </mat-nav-list>
+        <mat-nav-list>
+    </mat-nav-list>
+        </mat-sidenav>
+    
+    <div class="example-card">
+        <h3 class="header"></h3>
+        <mat-card class="menu" *ngFor="let pro of product" >
+            <mat-card-header>
+                <mat-card-title>{{pro.name}}</mat-card-title>
+            </mat-card-header>
+          
+            <span>{{pro.productName}}</span>
+            <img src="{{pro.productImg}}" alt="">
+            <mat-card-actions>
+                <span>
+                     {{pro.price}}/-
+                  </span>
+                <button mat-flat-button style="margin-left: 17em;" class="order" (click)="addFood">
+                    Order Now
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+        
+    
+       
+        
+    
+    
+    
+    
+    
+    

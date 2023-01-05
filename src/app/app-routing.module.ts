@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AppComponent } from './app.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 const routes: Routes = [
   {
     path:'',
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path:'admin-dashboard',
     component:AdminDashboardComponent
+  },
+  {
+    path:'customer-dashboard',
+    component:CustomerDashboardComponent
   }
  
 
