@@ -13,12 +13,19 @@ import { MaterialModule} from './materialModule';
 import { MatCardModule } from "@angular/material/card";
 import {MatMenuModule} from '@angular/material/menu';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { BillingComponent } from './billing/billing.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
+    AdminDashboardComponent,
+    BillingComponent,
+    RegisterComponent,
+    LoginComponent
     AdminDashboardComponent,
     CustomerDashboardComponent,
     CartComponent
