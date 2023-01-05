@@ -12,11 +12,17 @@ import{MatIconModule}from '@angular/material/icon'
 import { MaterialModule} from './materialModule';
 import {MatMenuModule} from '@angular/material/menu';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { BillingComponent } from './billing/billing.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    BillingComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

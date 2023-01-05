@@ -15,4 +15,14 @@ export class ServiceService {
   getProduct():Observable<any[]>{
     return this.http.get<any[]>(this.url+"/products")
   }
-}
+  registerSave(data:any)
+  {
+    return this.http.post<any>(this.url+"/register",data)
+    }
+
+    loginGetData():Observable<any[]>
+    {
+       return this.http.get<any[]>("http://localhost:3000/register");
+    }
+  }
+

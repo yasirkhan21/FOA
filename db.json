@@ -13,7 +13,7 @@
       "id": 2
     },
     {
-      "productName": "Barger",
+      "productName": "Burger",
       "productImg": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "150",
       "id": 3
@@ -23,6 +23,63 @@
       "productImg": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "199",
       "id": 4
+    }
+  ],
+  "register": [
+    {
+      "fullName": "Yasir khan",
+      "email": "yasir@gmail.com",
+      "password": "yasir12",
+      "gender": "",
+      "dob": "",
+      "mob": "8989890034",
+      "userName": "yasir",
+      "id": 1
+    },
+    {
+      "userName": "yasir",
+      "password": "yasir12",
+      "id": 2
+    },
+    {
+      "userName": "yasir",
+      "password": "uidhiuw",
+      "id": 3
+    },
+    {
+      "userName": "yasir",
+      "password": "uidhiuw",
+      "id": 4
+    },
+    {
+      "userName": "yasir",
+      "password": "uidhiuw",
+      "id": 5
+    },
+    {
+      "userName": "yasir",
+      "password": "uidhiuw",
+      "id": 6
+    },
+    {
+      "userName": "yasir",
+      "password": "yasir12",
+      "id": 7
+    },
+    {
+      "userName": "yasir",
+      "password": "yasir12",
+      "id": 8
+    },
+    {
+      "userName": "yasir",
+      "password": "iuhud",
+      "id": 9
+    },
+    {
+      "userName": "yasir",
+      "password": "yasir12",
+      "id": 10
     }
   ],
   "comments": [
