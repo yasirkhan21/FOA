@@ -1,0 +1,59 @@
+
+<button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>menu</mat-icon></button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item (click)="list=true; open=false">View Food</button>
+  <button mat-menu-item (click)="open=true;list=false">Add Food</button>
+  <!-- <button mat-menu-item>Delete Food</button>
+  <button mat-menu-item>Modify Food</button> -->
+</mat-menu>
+<div *ngIf="open" class="productForm">
+  <h1>Fill Food Details</h1>
+  <form [formGroup]="productForm">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Enter FoodId</mat-label>
+      <input matInput placeholder="FoodId">
+    </mat-form-field><br> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Food</mat-label>
+      <input matInput placeholder="Food Name" formControlName="productName">
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Food Price</mat-label>
+      <input matInput placeholder="Food Price"  formControlName="price">
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Food image</mat-label>
+      <input matInput placeholder="Food image" formControlName="productImg">
+    </mat-form-field><br>
+    <button
+mat-raised-button
+color="accent"
+(click)="addFood()"
+>
+Add Food
+</button>
+  </form>
+</div>
+
+
+<div *ngIf="list && !open">
+<table>
+  <thead>
+    <th>Food Name</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of product">
+      <td>{{pro.productName}}</td>
+      <td>{{pro.price}}</td>
+      <td><img src="{{pro.productImg}}" alt=""></td>
+      <td><mat-icon>edit</mat-icon></td>
+      <td><mat-icon>delete</mat-icon></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

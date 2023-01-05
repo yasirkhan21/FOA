@@ -1,0 +1,12 @@
+.productForm{
+    margin-left: 400px;
+    border: 2px solid whitesmoke;
+    border-radius:25px;
+    width: 400px;
+    padding-left:100px;
+    height: 420px;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
