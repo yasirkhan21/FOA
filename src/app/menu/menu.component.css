@@ -1,0 +1,15 @@
+.example-card {
+  
+    height: 250px;
+    width: 200px;
+    margin: 10px;
+  }
+  .mat-card {
+    
+    margin: 20px;
+  }
+  .menu{
+    margin-bottom: 2px;
+    margin: 10px;
+    padding-top: 1px;
+  }

@@ -48,7 +48,7 @@ onKeyUp(event: any): void {
 }
 
   onSubmit(){
-    this.cs.registerSave(this.regform.value).subscribe();
+    // this.cs.registerSave(this.regform.value).subscribe();
     window.alert("You have been registered!!!");
    }
   

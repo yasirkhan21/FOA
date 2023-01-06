@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { CartComponent } from './cart/cart.component';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +26,11 @@ import { CartComponent } from './cart/cart.component';
     AdminDashboardComponent,
     BillingComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
     AdminDashboardComponent,
     CustomerDashboardComponent,
-    CartComponent
+    CartComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

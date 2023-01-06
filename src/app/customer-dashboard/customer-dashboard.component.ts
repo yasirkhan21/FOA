@@ -23,6 +23,7 @@ import { ServiceService } from '../service.service';
       list:boolean=false;
       productForm!:FormGroup;
       product!:any[];
+      resturants!:any[];
         ngOnInit(): void {
          this.productForm=this.fb.group({
           productName:['',],
@@ -32,15 +33,18 @@ import { ServiceService } from '../service.service';
          this.cs.getProduct().subscribe(list=>{
           this.product=list;
          })
+         this.cs.getResturants().subscribe(res=>{
+       
+          this.resturants=res;})
         }
-      addFood(){
-        if(this.productForm.valid)
-        {
-        this.cs.addProduct(this.productForm.value).subscribe();
-        alert("Product Added")
-        window.location.reload();
-        }
-      }
+      // addFood(){
+      //   if(this.productForm.valid)
+      //   {
+      //   this.cs.addProduct(this.productForm.value).subscribe();
+      //   alert("Product Added")
+      //   window.location.reload();
+      //   }
+      // }
       mouseenter() {
         if (!this.isExpanded) {
           this.isShowing = true;
@@ -52,7 +56,9 @@ import { ServiceService } from '../service.service';
           this.isShowing = false;
         }
       }
-      }
+
+    }
+      
     
   
   
