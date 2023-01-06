@@ -21,23 +21,23 @@ export class LoginComponent implements OnInit {
       password:['', [Validators.required,Validators.minLength(6),Validators.maxLength(12),Validators.pattern("^[a-zA-Z0-9_.-]*$")
     ]], 
     });
-    this.cs.loginGetData().subscribe(
-      {
-        next:(res)=>
-        {
-            console.log(res)
-            this.r=res
-            console.log(res)
-        },
-        error:(err)=>
-        {
-          console.log(err)
-        }
-      }
-    )
-    console.log(this.r);
+  //   this.cs.loginGetData().subscribe(
+  //     {
+  //       next:(res)=>
+  //       {
+  //           console.log(res)
+  //           this.r=res
+  //           console.log(res)
+  //       },
+  //       error:(err)=>
+  //       {
+  //         console.log(err)
+  //       }
+  //     }
+  //   )
+  //   console.log(this.r);
   
-  }
+   }
 
 
   onSubmit(){
@@ -49,6 +49,6 @@ export class LoginComponent implements OnInit {
       window.alert("Successful login");
     }
    });
-    this.cs.registerSave(this.regform.value).subscribe();
+    // this.cs.registerSave(this.regform.value).subscribe();
    }
 }

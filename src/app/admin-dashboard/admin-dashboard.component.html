@@ -1,11 +1,13 @@
 
-<button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>menu</mat-icon></button>
+<button mat-button [matMenuTriggerFor]="belowMenu">Menu<mat-icon>menu</mat-icon></button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
   <button mat-menu-item (click)="list=true; open=false">View Food</button>
   <button mat-menu-item (click)="open=true;list=false">Add Food</button>
   <!-- <button mat-menu-item>Delete Food</button>
   <button mat-menu-item>Modify Food</button> -->
+ 
 </mat-menu>
+<h1 style="text-align: center;"><strong>Welcome to Admin Dashboard</strong></h1>
 <div *ngIf="open" class="productForm">
   <h1>Fill Food Details</h1>
   <form [formGroup]="productForm">

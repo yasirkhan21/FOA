@@ -43,64 +43,7 @@
       "id": 8
     }
   ],
-  "register": [
-    {
-      "fullName": "Yasir khan",
-      "email": "yasir@gmail.com",
-      "password": "yasir12",
-      "gender": "",
-      "dob": "",
-      "mob": "8989890034",
-      "userName": "yasir",
-      "id": 1
-    },
-    {
-      "userName": "yasir",
-      "password": "yasir12",
-      "id": 2
-    },
-    {
-      "userName": "yasir",
-      "password": "uidhiuw",
-      "id": 3
-    },
-    {
-      "userName": "yasir",
-      "password": "uidhiuw",
-      "id": 4
-    },
-    {
-      "userName": "yasir",
-      "password": "uidhiuw",
-      "id": 5
-    },
-    {
-      "userName": "yasir",
-      "password": "uidhiuw",
-      "id": 6
-    },
-    {
-      "userName": "yasir",
-      "password": "yasir12",
-      "id": 7
-    },
-    {
-      "userName": "yasir",
-      "password": "yasir12",
-      "id": 8
-    },
-    {
-      "userName": "yasir",
-      "password": "iuhud",
-      "id": 9
-    },
-    {
-      "userName": "yasir",
-      "password": "yasir12",
-      "id": 10
-    }
-  ],
-  "comments": [
+  "AdminLogin": [
     {
       "id": 1,
       "userName": "admin",
@@ -119,7 +62,7 @@
       "id": 2
     },
     {
-      "resName": "Revalution",
+      "resName": "Revolution",
       "resImg": "https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?size=626&ext=jpg&ga=GA1.1.1945261188.1672254184",
       "id": 3
     }

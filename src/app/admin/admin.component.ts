@@ -37,6 +37,6 @@ export class AdminComponent implements OnInit{
    
   
   }
-    this.route.navigate(['/customer-dashboard']);
+    // this.route.navigate(['/customer-dashboard']);
   }
-}
+
