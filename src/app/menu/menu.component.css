@@ -8,8 +8,12 @@
     
     margin: 20px;
   }
-  .menu{
+  .menu {
     margin-bottom: 2px;
     margin: 10px;
     padding-top: 1px;
+  }
+  img{
+    height: 100px;
+    width: 150px;
   }

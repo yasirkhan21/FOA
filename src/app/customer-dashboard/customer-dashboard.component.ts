@@ -12,7 +12,7 @@ import { ServiceService } from '../service.service';
   export class CustomerDashboardComponent {
     @ViewChild('sidenav')
     sidenav!: MatSidenavModule;
-    isExpanded = true;
+    isExpanded = false;
     showSubmenu: boolean = false;
     isShowing = false;
     showSubSubMenu: boolean = false;
@@ -24,6 +24,9 @@ import { ServiceService } from '../service.service';
       productForm!:FormGroup;
       product!:any[];
       resturants!:any[];
+     
+      
+      
         ngOnInit(): void {
          this.productForm=this.fb.group({
           productName:['',],

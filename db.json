@@ -41,6 +41,12 @@
       "productImg": "https://b.zmtcdn.com/data/pictures/7/113797/740f0113f749cbde02181585993b0e05.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
       "price": "249",
       "id": 8
+    },
+    {
+      "productName": "Dal Baati",
+      "productImg": "https://img.traveltriangle.com/blog/wp-content/uploads/2018/01/shutterstock_4148348021.jpg",
+      "price": "150",
+      "id": 9
     }
   ],
   "AdminLogin": [
@@ -54,17 +60,38 @@
     {
       "resName": "Apna Sweets",
       "resImg": "https://img.freepik.com/free-photo/top-view-bowls-with-indian-food_23-2148723454.jpg?size=626&ext=jpg&ga=GA1.2.1945261188.1672254184",
+      "rating": "⭐⭐⭐⭐",
+      "review": 179,
       "id": 1
     },
     {
       "resName": "Guru Kripa",
       "resImg": "https://img.freepik.com/free-photo/nutritious-indian-dosa-composition_23-2149086067.jpg?size=626&ext=jpg&ga=GA1.2.1945261188.1672254184",
+      "rating": "⭐⭐⭐⭐⭐",
+      "review": 300,
       "id": 2
     },
     {
       "resName": "Revolution",
       "resImg": "https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?size=626&ext=jpg&ga=GA1.1.1945261188.1672254184",
+      "rating": "⭐⭐⭐⭐",
+      "review": 298,
       "id": 3
+    },
+    {
+      "resName": "Nafees",
+      "resImg": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bmmsvclvyb6fuqb9hxyo",
+      "rating": "⭐⭐⭐⭐⭐",
+      "review": 500,
+      "id": 4
+    }
+  ],
+  "Cart": [
+    {
+      "productName": "Paneer Tikka",
+      "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
+      "price": "250",
+      "id": 2
     }
   ]
 }

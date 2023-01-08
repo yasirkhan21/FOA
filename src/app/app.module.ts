@@ -19,6 +19,13 @@ import { LoginComponent } from './login/login.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './menu/menu.component';
+import { ToastrModule } from 'ngx-toastr';
+// import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +37,8 @@ import { MenuComponent } from './menu/menu.component';
     AdminDashboardComponent,
     CustomerDashboardComponent,
     CartComponent,
-    MenuComponent
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,8 @@ import { MenuComponent } from './menu/menu.component';
     MaterialModule,
     MatMenuModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

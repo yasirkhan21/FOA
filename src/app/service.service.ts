@@ -29,7 +29,17 @@ export class ServiceService {
   getResturants(): Observable<any[]> {
     return this.http.get<any[]>(this.url + "/Resturants")
   }
+  
+addToCart(data:any){
+  return this.http.post<any>(this.url+"/Cart",data)
+}
+getCartItem():Observable<any[]>{
+  return this.http.get<any>(this.url+"/Cart")
+}
 
+removeCart(id:number){
+return this.http.delete(this.url+"/Cart/"+id)
+}
 }
 // registerSave(data: any)
 // {
