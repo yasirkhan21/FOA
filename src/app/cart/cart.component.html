@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<p>Order details</p>
+<div *ngFor="let item of cartList">
+<p>{{item.productName}}</p>
+<p>{{item.price}}</p>
+<button mat-flat-button (click)="removeCartItem(item.id)">Remove Item</button>
+</div>

@@ -1,46 +1,12 @@
-.example-container {
-  height: 500px;
-}
-.example-sidenav-content {
-  background-image: linear-gradient(#e3e7eb 50%, #61aee9 90%);
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.example-sidenav {
-  user-select: none;
-}
-.full-width {
-  width: 100%;
-}
-.menu-button {
-  transition: 300ms ease-in-out;
-  transform: rotate(0deg);
-}
-.menu-button.rotated {
-  transform: rotate(180deg);
-}
-.submenu {
-  overflow-y: hidden;
-  transition: transform 300ms ease;
-  transform: scaleY(0);
-  transform-origin: top;
-  padding-left: 30px;
-}
-.submenu.expanded {
-  transform: scaleY(1);
-}
 
-p {
-  font-family: "Lato", sans-serif;
-  text-align: justify;
-}
+
 .example-card {
   
-  height: 250px;
-  width: 200px;
-  margin: 10px;
+  /* height: 307px;
+   /* margin-left: 81px; */
+  width: 24%; 
+  margin:5px;
+ 
 }
 .mat-card {
   
@@ -48,8 +14,6 @@ p {
 }
 .res {
   margin-bottom: 2px;
-  
-  
   margin: 10px;
   padding-top: 1px;
 /* col-md-4; */
@@ -64,3 +28,19 @@ mat-card-subtitle {
   justify-content: center;
   display: flex;
 }
+
+.headimg{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 35px;
+}
+h3{
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+/* .example-header-image {
+  background-image:url("https://b.zmtcdn.com/data/dish_images/d19a31d42d5913ff129cafd7cec772f81639737697.png");
+  background-size: cover;
+} */

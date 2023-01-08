@@ -13,5 +13,8 @@ export class MenuComponent implements OnInit{
       this.product=list;
      })
   }
-
+  addtoCart(cartItem:any){
+  console.log(cartItem)
+  this.cs.addToCart(cartItem).subscribe();
+  }
 }

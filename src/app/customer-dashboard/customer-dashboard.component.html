@@ -1,8 +1,10 @@
-<div>
+<!-- <div style="overflow: auto;
+overflow-x: hidden;">
   <mat-toolbar
     color="accent"
-    style="background-color: #61aee9"
+  
     class="example-toolbar"
+    color="primary"
   >
     <button mat-icon-button (click)="isExpanded = !isExpanded">
       <mat-icon>menu</mat-icon>
@@ -10,23 +12,20 @@
 
     <h1
       style="
-        color: white;
+        color:#FF7B54;
         text-align: center;
-        padding-top: 1em;
+    padding-top: 20px;
         font-family: 'Franklin Gothic Medium';
+        font-size: 28px;
       "
     >
       Hungrezy <mat-icon>restaurant</mat-icon>
     </h1>
-
-    <!-- <button mat-button style="margin-left: 80%; background-color: #d82e0f">
-      Login
-    </button> -->
-    <a routerLink="#" mat-button style="margin-left: 60%; color: white"
-      ><mat-icon matBadge="1" matBadgeColor="warn"> fastfood</mat-icon>Cart</a
+    <a routerLink="#" mat-button style="margin-left: 60%; color:#FF7B54"
+     class="icon" ><mat-icon matBadge="1" Color="black"> fastfood</mat-icon>Cart</a
     >
-    <a routerLink="login" mat-button style="margin-left: 70px; color: white"
-      ><mat-icon>perm_identity</mat-icon>Login</a
+    <a routerLink="login" mat-button style="margin-left: 70px; color:#FF7B54"
+    class="icon"><mat-icon>perm_identity</mat-icon>Login</a
     >
   </mat-toolbar>
   <mat-sidenav-container class="example-container" autosize>
@@ -34,78 +33,68 @@
       #sidenav
       class="example-sidenav"
       mode="side"
-      opened="true"
+      opened="!isExpanded"
       (mouseenter)="mouseenter()"
       (mouseleave)="mouseleave()"
     >
-      <mat-nav-list>
-        <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+      <mat-nav-list *ngIf="isExpanded">
+        <mat-list-item class="parent">
           <span class="full-width" *ngIf="isExpanded || isShowing"
             ><mat-icon mat-list-icon>home</mat-icon>Home
-          </span>
-
-          <mat-icon
-            class="menu-button"
-            [ngClass]="{ rotated: showSubmenu }"
-            *ngIf="isExpanded || isShowing"
-            >expand_more</mat-icon
-          >
+          </span> -->
+          <!-- <span style="color:#FF7B54"><a mat-list-item routerLink="admin"  >
+            <mat-icon>account_circle</mat-icon>Admin</a></span>
         </mat-list-item>
-        <div
-          class="submenu"
-          [ngClass]="{ expanded: showSubmenu }"
-          *ngIf="isShowing || isExpanded"
-        >
-          <span
-            ><a mat-list-item routerLink="admin"
-              ><mat-icon>account_circle</mat-icon>Admin</a
-            ></span
-          >
-        </div>
       </mat-nav-list>
       <mat-nav-list> </mat-nav-list>
-    </mat-sidenav>
+    </mat-sidenav> -->
+<div>
+  <img src="/assets/image/banner.png" style="margin:2%; height: 500px; width: 98%;" alt="banner">
+</div>
+        
 
-    <!-- <div class="example-card">
-      <h3 class="header"></h3>
-      <div class="card">
-        <mat-card class="menu" *ngFor="let pro of product">
-          <mat-card-header>
-            <mat-card-title>{{ pro.name }}</mat-card-title>
-          </mat-card-header>
+<div class="row jumbotron" style="margin: 15px; background-color:whitesmoke; height:70%;">
+<h1 style="margin-top:2%;margin-left: 5%;font-family: 'Franklin Gothic Medium';"><strong>Discover the best food</strong></h1>
+<div class="col-md-3">
+  <img class="headimg" src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" alt="">
+  <h3><strong>Thali</strong></h3>
+</div>
+<div class="col-md-3">
+  <img class="headimg"  src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png" alt="">
+  <h3><strong>Pizza</strong></h3>
+</div>
+<div class="col-md-3">
+  <img class="headimg"  src="https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png" alt="">
+  <h3><strong>Sandwich</strong></h3>
+</div>
+<div class="col-md-3">
+  <img class="headimg"  src="https://b.zmtcdn.com/data/dish_images/d19a31d42d5913ff129cafd7cec772f81639737697.png" alt="">
+  <h3><strong>Biryani</strong></h3>
+</div>
+</div>
 
-          <span>{{ pro.productName }}</span>
-          <img src="{{ pro.productImg }}" alt="" />
-          <mat-card-actions>
-            <span> {{ pro.price }}/- </span>
-            <button
-              mat-flat-button
-              style="margin-left: 17em"
-              class="order"
-            
-            >
-              Order Now
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </div> -->
+<h1 style="margin-top:2%;margin-left: 5%;font-family: 'Franklin Gothic Medium';"><strong>Top Restautrants for you</strong></h1>
     <div class="res row">
   
         <mat-card class="example-card col-md-4" *ngFor="let res of resturants">
           <mat-card-header>
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <div mat-card-avatar class="example-header-image" style ="  background-size: cover;
+            background-image: url('{{ res.resImg }}');
+            "></div>
             <mat-card-title>{{ res.resName }}</mat-card-title>
-            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+            <mat-card-subtitle>Indore,India</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="{{ res.resImg }}" alt="resturant" />
-          <mat-card-content> </mat-card-content>
+          <img mat-card-image src="{{ res.resImg }}" alt="resturant" /><br>
+            <mat-card-content> 
+              <p>Rating:{{res.rating}}</p>
+              <p>Review:{{res.review}}</p>
+            </mat-card-content> 
           <mat-card-actions>
-            <button mat-flat-button color="accent" routerLink="menu">Order Now</button>
+            <button mat-flat-button color="accent" routerLink="/menu">Order Now</button>
             <!-- <button mat-button>SHARE</button> -->
           </mat-card-actions>
         </mat-card>&nbsp;
 
-    </div>
-  </mat-sidenav-container>
-</div>
+    </div>    
+  <!-- </mat-sidenav-container>
+</div> -->
