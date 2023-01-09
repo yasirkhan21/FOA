@@ -1,4 +1,4 @@
-.example-card {
+/* .example-card {
   
     height: 250px;
     width: 200px;
@@ -16,4 +16,33 @@
   img{
     height: 100px;
     width: 150px;
-  }
+    margin-left: 25px;
+  } */
+  
+  mat-card-image,img{
+    height: 200px;
+    width: 270px;
+}
+.example-card {
+  
+  /* height: 307px;
+   /* margin-left: 81px; */
+  width: 24%; 
+  margin:5px;
+ 
+}
+.mat-card {
+  
+  margin: 20px;
+}
+.res {
+  margin-bottom: 2px;
+  margin: 10px;
+  padding-top: 1px;
+/* col-md-4; */
+}
+
+/* .example-header-image {
+  background-image:url("https://b.zmtcdn.com/data/dish_images/d19a31d42d5913ff129cafd7cec772f81639737697.png");
+  background-size: cover;
+} */

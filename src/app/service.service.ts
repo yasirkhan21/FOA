@@ -23,7 +23,9 @@ export class ServiceService {
   }
 
   updateProduct(id: number, product: any) {
-    return this.http.put(this.url + "/products" + id, product)
+    console.log(product)
+  
+    return this.http.put(this.url + "/products/" + id, product)
   }
 
   getResturants(): Observable<any[]> {

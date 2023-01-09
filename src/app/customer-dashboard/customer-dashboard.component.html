@@ -48,8 +48,10 @@ overflow-x: hidden;">
       </mat-nav-list>
       <mat-nav-list> </mat-nav-list>
     </mat-sidenav> -->
-    <button *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">SignOut</button>
+    <button mat-raised-button color="warn" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">SignOut</button>
 <div>
+    
+    <div>
   <img src="/assets/image/banner.png" style="margin:2%; height: 500px; width: 98%;" alt="banner">
 </div>
         

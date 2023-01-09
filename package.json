@@ -25,6 +25,7 @@
     "@syncfusion/ej2-angular-layouts": "^20.4.42-ngcc",
     "bootstrap": "^5.2.3",
     "firebase": "^9.15.0",
+    "ngx-bootstrap": "^6.2.0",
     "ngx-toastr": "^16.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
