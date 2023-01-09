@@ -48,6 +48,7 @@ overflow-x: hidden;">
       </mat-nav-list>
       <mat-nav-list> </mat-nav-list>
     </mat-sidenav> -->
+    <button *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">SignOut</button>
 <div>
   <img src="/assets/image/banner.png" style="margin:2%; height: 500px; width: 98%;" alt="banner">
 </div>
@@ -76,7 +77,7 @@ overflow-x: hidden;">
 <h1 style="margin-top:2%;margin-left: 5%;font-family: 'Franklin Gothic Medium';"><strong>Top Restautrants for you</strong></h1>
     <div class="res row">
   
-        <mat-card class="example-card col-md-4" *ngFor="let res of resturants">
+        <mat-card class="example-card col-md-4" *ngFor="let res of resturant">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image" style ="  background-size: cover;
             background-image: url('{{ res.resImg }}');

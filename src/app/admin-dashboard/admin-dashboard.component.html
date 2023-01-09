@@ -51,7 +51,7 @@ Add Food
     <tr *ngFor="let pro of product">
       <td>{{pro.productName}}</td>
       <td>{{pro.price}}</td>
-      <td><img src="{{pro.productImg}}" alt=""></td>
+      <td><img src="{{pro.productImage}}" alt=""></td>
       <td><mat-icon>edit</mat-icon></td>
       <td><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
     </tr>

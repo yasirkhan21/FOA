@@ -8,15 +8,18 @@ import { LoginComponent } from './login/login.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
-  { path:'', component:CustomerDashboardComponent},
-  {path:'admin-dashboard',component:AdminDashboardComponent},
-  {path:'register', component:RegisterComponent},
-  {path:'login', component:LoginComponent},
-  {path:'admin',component:AdminComponent},
-  {path:'menu',component:MenuComponent},
-  { path:'home', component:CustomerDashboardComponent},
-{path:'cart',component:CartComponent}
+  { path: '', component: CustomerDashboardComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent , canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent , canActivate: [AuthGuard] },
+  { path: 'menu', component: MenuComponent },
+  { path: 'home', component: CustomerDashboardComponent },
+  { path: 'cart', component: CartComponent , canActivate: [AuthGuard] },
+  { path: 'sign-in', component: SignInComponent }
 ];
 
 @NgModule({

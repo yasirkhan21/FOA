@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterForm } from '../models/registerForm';
 import { ServiceService } from '../service.service';
+import { AuthService } from "src/app/shared/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb:FormBuilder,private cs:ServiceService,private router:Router){}
+  constructor(private fb:FormBuilder,private cs:ServiceService,private router:Router,public authService: AuthService){}
   regform!:FormGroup;
   r!:RegisterForm[];
   hide = true;

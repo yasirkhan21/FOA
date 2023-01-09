@@ -17,4 +17,7 @@ export class MenuComponent implements OnInit{
   console.log(cartItem)
   this.cs.addToCart(cartItem).subscribe();
   }
+
+
+  
 }

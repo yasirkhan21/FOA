@@ -20,11 +20,14 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
 import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './menu/menu.component';
 import { ToastrModule } from 'ngx-toastr';
-// import { AngularFireModule } from '@angular/fire/compat';
-// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { AuthService } from "src/app/shared/services/auth.service";
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 // import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-// import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environment/environment';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
     CustomerDashboardComponent,
     CartComponent,
     MenuComponent,
+    SignInComponent,
 
   ],
   imports: [
@@ -52,9 +56,13 @@ import { ToastrModule } from 'ngx-toastr';
     MatMenuModule,
     HttpClientModule,
     MatCardModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
