@@ -1,12 +1,13 @@
 .productForm{
     margin-left: 400px;
-    border: 2px solid whitesmoke;
+    border: 2px solid chocolate;
     border-radius:25px;
     width: 400px;
     padding-left:100px;
-    height: 420px;
+    height: 400px;
 }
 img{
     width: 100px;
     height: 100px;
 }
+

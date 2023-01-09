@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 constructor(private service:ServiceService){}
-cartItem!:any[];
+cartItem:any[]=[];
   ngOnInit(): void {
    this.service.getCartItem().subscribe(list=>{
     this.cartItem=list;
@@ -25,7 +25,9 @@ cartItem!:any[];
   // ngDoCheck(){
   //   this.service.getCartItem().subscribe(list=>{
   //     this.cartItem=list;
+  //     console.log(2);
   //    })
+  //    console.log(1);
   // }
 
 }

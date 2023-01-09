@@ -1,15 +1,18 @@
-
+<div style="height:210%; background-color: #F7F5EB;
+width: 100%;box-shadow: 2px chocolate;">
+<!-- menu for admin dashboard -->
 <button mat-button [matMenuTriggerFor]="belowMenu">Menu<mat-icon>menu</mat-icon></button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
   <button mat-menu-item (click)="list=true; open=false">View Food</button>
   <button mat-menu-item (click)="open=true;list=false">Add Food</button>
-  <!-- <button mat-menu-item>Delete Food</button>
-  <button mat-menu-item>Modify Food</button> -->
- 
+  <button mat-raised-button color="warn" routerLink="/admin">Logout</button>
+ <!-- Adding new item in product -->
 </mat-menu>
 <h1 style="text-align: center;"><strong>Welcome to Admin Dashboard</strong></h1>
-<div *ngIf="open" class="productForm">
-  <h1>Fill Food Details</h1>
+<hr>
+
+<div *ngIf="open" class="productForm" style="background-image: url('');">
+  <h1 style="margin-top: 5%;">Fill Food Details</h1>
   <form [formGroup]="productForm">
     <!-- <mat-form-field appearance="fill">
       <mat-label>Enter FoodId</mat-label>
@@ -18,14 +21,23 @@
     <mat-form-field appearance="fill">
       <mat-label>Enter Food</mat-label>
       <input matInput placeholder="Food Name" formControlName="productName">
+      <mat-error *ngIf="this.productForm.controls['productName'].hasError('required')">
+        *Required
+      </mat-error>
     </mat-form-field><br>
     <mat-form-field appearance="fill">
       <mat-label>Enter Food Price</mat-label>
       <input matInput placeholder="Food Price"  formControlName="price">
+      <mat-error *ngIf="this.productForm.controls['price'].hasError('required')">
+        *Required
+      </mat-error>
     </mat-form-field><br>
     <mat-form-field appearance="fill">
       <mat-label>Enter Food image Url</mat-label>
       <input matInput placeholder="Food image" formControlName="productImg">
+      <mat-error *ngIf="this.productForm.controls['productImg'].hasError('required')">
+        *Required
+      </mat-error>
     </mat-form-field><br>
     <button
 mat-raised-button
@@ -37,6 +49,7 @@ Add Food
   </form>
 </div>
 
+<!-- display all item from products -->
 
 <div *ngIf="list && !open" class="container">
 <table class="table table-hover table-bordered ">
@@ -48,14 +61,67 @@ Add Food
     <th>Delete</th>
   </thead>
   <tbody>
-    <tr *ngFor="let pro of product">
+    <tr *ngFor="let pro of products">
       <td>{{pro.productName}}</td>
       <td>{{pro.price}}</td>
       <td><img src="{{pro.productImage}}" alt=""></td>
       <td><mat-icon>edit</mat-icon></td>
+      <td><img src="{{pro.productImg}}" alt=""></td>
+      <td><span><mat-icon (click)="openModal(template);editProductDetails(pro);">edit</mat-icon></span></td>
+
       <td><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
     </tr>
   </tbody>
 </table>
-
 </div>
+
+<!-- modal for updating product -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Update Product Details</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide();reset()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="fill" hidden>
+      <mat-label>Enter FoodId</mat-label>
+      <input matInput placeholder="FoodId" formControlName="id">
+    </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Food</mat-label>
+        <input matInput placeholder="Food Name" formControlName="productName" >
+        <mat-error *ngIf="this.productForm.controls['productName'].hasError('required')">
+          *Required
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Food Price</mat-label>
+        <input matInput placeholder="Food Price"  formControlName="price" >
+        <mat-error *ngIf="this.productForm.controls['price'].hasError('required')">
+          *Required
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Food image Url</mat-label>
+        <input matInput placeholder="Food image" formControlName="productImg" >
+        <mat-error *ngIf="this.productForm.controls['productImg'].hasError('required')">
+          *Required
+        </mat-error>
+      </mat-form-field><br>
+      <button
+      mat-raised-button
+      color="accent"
+      (click)="updateProduct(productForm.value)"
+      >
+      Update
+      </button>
+      </form>
+
+  </div>
+</ng-template>
+</div>
+
+
+         

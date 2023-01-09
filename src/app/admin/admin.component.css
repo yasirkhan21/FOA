@@ -1,14 +1,10 @@
 .adminLogin{
-  background-color: #FBF1D3;
-    margin-top: 50px;
-    margin-left: 400px;
-    padding-left: 75px;
-    padding-top: 45px;
-    border: 2px solid whitesmoke;
-    border-radius:25px;
-    width: 400px;
-    height: 350px;
+    margin-top: 6%;
 }
 h1{
     margin-left: 45px;
 }
+/* .main{
+    background-size: cover;
+    background-image: url("https://thumbs.dreamstime.com/b/restaurant-staff-waiter-serving-female-client-vector-flat-illustration-interior-cafe-uniform-carrying-order-dish-to-213051501.jpg");
+} */

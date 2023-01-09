@@ -24,6 +24,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthService } from "src/app/shared/services/auth.service";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+// import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 // import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -42,6 +46,7 @@ import { environment } from 'src/environment/environment';
     CartComponent,
     MenuComponent,
     SignInComponent,
+  
 
   ],
   imports: [
@@ -61,6 +66,12 @@ import { environment } from 'src/environment/environment';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    ToastrModule.forRoot({
+    //   timeOut:5000,
+    //  closeButton:true,
+    //  toastClass: "toast border-red",
+    }),
+    ModalModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
