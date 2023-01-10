@@ -4,7 +4,7 @@
       "id": 2,
       "productName": "Paneer Tikka",
       "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
-      "price": "249"
+      "price": "250"
     },
     {
       "productName": "Burger",
@@ -86,5 +86,40 @@
       "id": 4
     }
   ],
+<<<<<<< Updated upstream
   "Cart": []
+=======
+  "Cart": [
+    {
+      "productName": "Paneer Tikka",
+      "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
+      "price": "250",
+      "id": 2
+    },
+    {
+      "productName": "Burger",
+      "productImg": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "150",
+      "id": 3
+    },
+    {
+      "productName": "Pizza",
+      "productImg": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "199",
+      "id": 4
+    },
+    {
+      "productName": "Chole Bhature",
+      "productImg": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
+      "price": "180",
+      "id": 6
+    },
+    {
+      "productName": "Khichdi",
+      "productImg": "https://c.ndtvimg.com/2022-03/j5jbs6g_khichdi_625x300_25_March_22.jpg",
+      "price": "149",
+      "id": 7
+    }
+  ]
+>>>>>>> Stashed changes
 }

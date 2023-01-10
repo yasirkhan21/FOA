@@ -3,3 +3,15 @@ img{
     width: 708px;
     /* border-radius: 50%; */
 }
+.cart{
+    background-image: url('/assets/image/Cart.png');
+    background-repeat: no-repeat;
+}
+.cartbg{
+    /* background-image: url('/assets/image/Cart.png'); */
+    /* background-image: linear-gradient(#ffffff 30%,#bf9c75 90%); */
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    margin-left: 1%;
+}
