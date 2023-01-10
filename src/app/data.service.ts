@@ -79,17 +79,17 @@ export class DataService {
     return this.cartsRef.push(cart);
   }
 
-  updateCarts(id: string, value: any): Promise<void> {
-    return this.cartsRef.update(id, value);
-  }
+  // updateCarts(id: string, value: any): Promise<void> {
+  //   return this.cartsRef.update(id, value);
+  // }
 
   deleteCarts(id: string): Promise<void> {
     return this.cartsRef.remove(id);
   }
 
-  deleteAllCarts(): Promise<void> {
-    return this.cartsRef.remove();
-  }
+  // deleteAllCarts(): Promise<void> {
+  //   return this.cartsRef.remove();
+  // }
   //#endregion
 
   //#region User
@@ -98,4 +98,11 @@ export class DataService {
     return this.usersRef.push(adminLogin);
   }
   //#endregion
+
+  get UserId(): any {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    // console.log(user);
+    return user !== null && user.emailVerified !== false ? user.uid : "";
+
+  }
 }

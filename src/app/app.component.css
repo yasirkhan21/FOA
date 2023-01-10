@@ -2,6 +2,9 @@
     background:white;
     color:#FF7B54;
   }
+  .mat-badge-content{
+    color : yellow;
+  }
   .example-container {
     height: 500px;
   }

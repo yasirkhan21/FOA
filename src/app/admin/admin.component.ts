@@ -9,18 +9,19 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit{
-  hide: boolean = false;
+  hide: boolean = true;
   admin!:FormGroup;
   constructor(private route: Router,private fb:FormBuilder,private cs:ServiceService,private toast:ToastrService) { }
   ngOnInit(): void {
    this.admin=this.fb.group({
-    userName:['',],
-    password:['',]
+    userName:['',[Validators.required]],
+    password:['',[Validators.required]]
    })
   }
   
   adminLogin() {
    this.cs.getAdmin().subscribe(res=>{
+
     const user = res.find((a: any) => {
       return a.userName== this.admin.value.userName && a.password==this.admin.value.password
     });
@@ -31,12 +32,18 @@ export class AdminComponent implements OnInit{
       this.route.navigate(['/admin-dashboard']);
     }
     else{
-      alert("Enter valid username and password")
+     this.toast.error("Enter valid username and password");
       this.admin.reset();
     }
+   },(error)=>{
+    this.toast.error("Something went wrong!");
    });
    
   
+  }
+
+  reset(){
+    this.admin.reset();
   }
     // this.route.navigate(['/customer-dashboard']);
   }

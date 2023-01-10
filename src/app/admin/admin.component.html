@@ -1,47 +1,57 @@
-<div class="adminLogin">
-    <h1><strong>Admin Login</strong></h1>
-<form [formGroup]="admin">
+<div class="row main">
+  <div class="col-md-8">
+    <img
+      src="https://foaps.co/wp-content/uploads/2021/11/restaurants@2x.png"
+     style="margin-left:15%;"
+    />
+  </div>
 
-    <mat-form-field appearance="fill">
+  <div class="col-md-4 adminLogin">
+    <h1><strong>Admin Login</strong></h1>
+    <form [formGroup]="admin">
+      <mat-form-field appearance="fill">
         <mat-label>Enter User Name </mat-label>
         <mat-icon matIconSuffix>account_circle</mat-icon>
         <input
-        type="text"
-        matInput
-        placeholder="User Name"
-        formControlName="userName"
-        />
-       
-    </mat-form-field><br>
-    
-    <mat-form-field appearance="fill" >
+          type="text"
+          matInput
+          placeholder="User Name"
+          formControlName="userName"
+        /> 
+        <mat-error *ngIf="admin.controls['userName'].hasError('required')">
+          <span>*required</span>
+        </mat-error>
+        </mat-form-field
+      ><br />
+
+      <mat-form-field appearance="fill">
         <mat-label>Enter your password</mat-label>
         <input
-        matInput
-        [type]="hide ? 'password' : 'text'"
-        type="password"
-        formControlName="password"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          type="password"
+          formControlName="password"
         />
+        <mat-error *ngIf="admin.controls['password'].hasError('required')">
+          <span>*required</span></mat-error>
         <button
-        mat-icon-button
-        matSuffix
-        (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
-        type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+          type="button"
         >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-    </button>
-
-</mat-form-field><br>
-<button
-mat-raised-button
-color="primary"
-(click)="adminLogin()"
->
-Login
-</button>
-
-</form>
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button> </mat-form-field
+      ><br />
+      <button mat-raised-button color="accent" (click)="adminLogin()">
+        Login
+      </button>
+      <!-- <button mat-raised-button color="accent" (click)="reset()" style="margin-left: 20px;">  
+        Reset
+      </button> -->
+    </form>
+  </div>
 </div>
 <!-- <router-outlet></router-outlet> -->
