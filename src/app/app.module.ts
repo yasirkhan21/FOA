@@ -28,6 +28,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environment/environment';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { environment } from 'src/environment/environment';
     CartComponent,
     MenuComponent,
     SignInComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [

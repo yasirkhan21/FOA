@@ -1,70 +1,60 @@
-
-
 <div style="overflow: auto;
 overflow-x: hidden;">
-  <mat-toolbar
-    color="accent"
-  
-    class="example-toolbar"
-    color="primary"
-  >
+  <mat-toolbar color="accent" class="example-toolbar" color="primary">
     <button mat-icon-button (click)="isExpanded = !isExpanded">
       <mat-icon>menu</mat-icon>
     </button>
-    
 
-    <h1
-      style="
+
+    <h1 style="
         color:#FF7B54;
         text-align: center;
     padding-top: 20px;
         font-family: 'Franklin Gothic Medium';
         font-size: 28px;
-      " routerLink="home"
-    >
+      " routerLink="home">
       Hungrezy <mat-icon>restaurant</mat-icon>
     </h1>
-    <a routerLink="cart" mat-button style="margin-left: 60%; color:#FF7B54"
-     class="icon" ><mat-icon [matBadge]="cartItem.length" Color="black"> fastfood</mat-icon>Cart</a
-    >
+    <a routerLink="cart" mat-button style="margin-left: 60%; color:#FF7B54" class="icon"><mat-icon
+        [matBadge]="cartItem.length" Color="black"> fastfood</mat-icon>Cart</a>
     <a routerLink="login" mat-button style="margin-left: 70px; color:#FF7B54"
-    class="icon"><mat-icon>perm_identity</mat-icon>Login</a
-    >
+      class="icon"><mat-icon>perm_identity</mat-icon>Login</a>
   </mat-toolbar>
   <mat-sidenav-container class="example-container" autosize>
-    <mat-sidenav
-      #sidenav
-      class="example-sidenav"
-      mode="side"
-      opened="!isExpanded"
-
-    >
+    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="!isExpanded">
       <mat-nav-list *ngIf="isExpanded">
         <mat-list-item class="parent">
 
-          <span style="color:#FF7B54"><a mat-list-item routerLink="admin"  >
-            <mat-icon>account_circle</mat-icon>Admin</a></span>
+          <span style="color:#FF7B54"><a mat-list-item routerLink="admin">
+              <mat-icon>account_circle</mat-icon>Admin</a></span>
         </mat-list-item>
       </mat-nav-list>
       <mat-nav-list> </mat-nav-list>
     </mat-sidenav>
     <router-outlet></router-outlet>
     <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <span class="mb-3 mb-md-0 text-muted">© Hungrezy 2023, Inc</span>
-          </div>
-      
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
-        </footer>
-      </div>
-</mat-sidenav-container>
-</div>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© Hungrezy 2023, Inc</span>
+        </div>
 
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook"></use>
+              </svg></a></li>
+        </ul>
+      </footer>
+    </div>
+  </mat-sidenav-container>
+</div>

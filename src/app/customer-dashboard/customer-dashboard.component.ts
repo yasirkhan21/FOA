@@ -77,7 +77,7 @@ export class CustomerDashboardComponent {
       )
     ).subscribe(data => {
       this.product = data;
-      console.log(data);
+      // console.log(data);
     });
   }
   retrieveRestaurants(): void {
@@ -89,7 +89,7 @@ export class CustomerDashboardComponent {
       )
     ).subscribe(data => {
       this.resturant = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 

@@ -35,15 +35,15 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  deleteProduct(id: number = 0) {
-    this.cs.deleteProduct(id).subscribe();
-    alert("Product deleted")
-    window.location.reload();
-  }
+  // deleteProduct(id: number = 0) {
+  //   this.cs.deleteProduct(id).subscribe();
+  //   alert("Product deleted")
+  //   window.location.reload();
+  // }
 
-  updateProduct(product: any) {
+  // updateProduct(product: any) {
 
-  }
+  // }
 
   retrieveProducts(): void {
     this.dataService.getAllProducts().snapshotChanges().pipe(
@@ -57,13 +57,13 @@ export class AdminDashboardComponent implements OnInit {
       console.log(data);
     });
   }
-  saveTutorial(): void {
+  saveProduct(): void {
     this.dataService.createProducts(this.productForm.value).then(() => {
       console.log('Created new item successfully!');
     });
   }
 
-  updateTutorial(): void {
+  updateProduct(): void {
     const data = {
       title: this.productForm.value.title,
       description: this.productForm.value.description
@@ -76,7 +76,7 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  deleteTutorial(id: number = 0): void {
+  deleteProduct(id: number = 0): void {
     if (id) {
       this.dataService.deleteProducts(id.toString())
         .then(() => {
