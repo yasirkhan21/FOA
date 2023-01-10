@@ -31,7 +31,6 @@ export class MenuComponent implements OnInit {
   // }
 
   addtoCart(pro: Products): void {
-    console.log(pro);
     // this.cartItem.userId = this.dataService.getUserId();
     const car: Carts = {
       price: pro.price,
@@ -39,7 +38,6 @@ export class MenuComponent implements OnInit {
       productName: pro.productName,
       userId: this.dataService.getUserId()
     }
-    console.log(car);
     if (true) {
       this.dataService.createCarts(car).then(() => {
         console.log('Created new item successfully!');

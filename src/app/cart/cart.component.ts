@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
       )
     ).subscribe(data => {
       this.cartList = data;
-      console.log(data)
+      // console.log(data)
     });
   }
 

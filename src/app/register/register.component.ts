@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.authService.SignUp(this.regform.value.email, this.regform.value.password)
     const user = JSON.parse(localStorage.getItem('user')!);
+    console.log(user);
     if (user != null) {
       const userdata: AdminLogin = {
         id: user.uid,

@@ -26,6 +26,7 @@ export class DataService {
     this.cartsRef = db.list(this.dbPathCart);
     this.usersRef = db.list(this.dbPathUser);
   }
+
   //#region Products
   getAllProducts(): AngularFireList<Products> {
     return this.productsRef;
@@ -103,6 +104,5 @@ export class DataService {
     const user = JSON.parse(localStorage.getItem('user')!);
     // console.log(user);
     return user !== null && user.emailVerified !== false ? user.uid : "";
-
   }
 }

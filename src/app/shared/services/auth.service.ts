@@ -2,10 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { User } from '../services/user';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
 
@@ -42,7 +39,7 @@ export class AuthService {
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             // console.log(user);
-            this.router.navigate(['home']);
+            this.router.navigate(['customer-dashboard']);
           }
         });
       })
@@ -59,7 +56,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
-        // console.log(result.user)
+        console.log(result.user)
       })
       .catch((error) => {
         window.alert(error.message);
@@ -70,7 +67,7 @@ export class AuthService {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
-        this.router.navigate(['verify-email-address']);
+        this.router.navigate(['sign-in']);
       });
   }
   // Reset Forggot password
@@ -94,7 +91,7 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['home']);
+      this.router.navigate(['customer-dashboard']);
     });
   }
   // Auth logic to run auth providers
@@ -102,7 +99,7 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['home']);
+        this.router.navigate(['customer-dashboard']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
