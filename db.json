@@ -7,10 +7,10 @@
       "price": "249"
     },
     {
-      "id": 3,
       "productName": "Burger",
       "productImg": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "price": "169"
+      "price": "150",
+      "id": 3
     },
     {
       "productName": "Pizza",
@@ -19,16 +19,16 @@
       "id": 4
     },
     {
-      "id": 5,
       "productName": "Biryani",
       "productImg": "https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg",
-      "price": "249"
+      "price": "195",
+      "id": 5
     },
     {
-      "id": 6,
       "productName": "Chole Bhature",
       "productImg": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
-      "price": "180"
+      "price": "180",
+      "id": 6
     },
     {
       "productName": "Khichdi",
@@ -43,10 +43,10 @@
       "id": 8
     },
     {
-      "id": 9,
       "productName": "Dal Baati",
       "productImg": "https://img.traveltriangle.com/blog/wp-content/uploads/2018/01/shutterstock_4148348021.jpg",
-      "price": "149"
+      "price": "150",
+      "id": 9
     }
   ],
   "AdminLogin": [
@@ -88,7 +88,6 @@
   ],
   "Cart": [
     {
-<<<<<<< Updated upstream
       "productName": "Paneer Tikka",
       "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
       "price": "250",
@@ -105,12 +104,12 @@
       "productImg": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "199",
       "id": 4
-=======
-      "id": 3,
-      "productName": "Burger",
-      "productImg": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "price": "169"
->>>>>>> Stashed changes
+    },
+    {
+      "productName": "Chole Bhature",
+      "productImg": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
+      "price": "180",
+      "id": 6
     }
   ]
 }

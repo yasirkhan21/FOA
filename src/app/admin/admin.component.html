@@ -17,7 +17,11 @@
           matInput
           placeholder="User Name"
           formControlName="userName"
-        /> </mat-form-field
+        /> 
+        <mat-error *ngIf="admin.controls['userName'].hasError('required')">
+          <span>*required</span>
+        </mat-error>
+        </mat-form-field
       ><br />
 
       <mat-form-field appearance="fill">
@@ -28,6 +32,8 @@
           type="password"
           formControlName="password"
         />
+        <mat-error *ngIf="admin.controls['password'].hasError('required')">
+          <span>*required</span></mat-error>
         <button
           mat-icon-button
           matSuffix

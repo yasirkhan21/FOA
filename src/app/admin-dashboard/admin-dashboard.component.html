@@ -1,5 +1,5 @@
-<div style="height:210%; background-color: #F7F5EB;
-width: 100%;box-shadow: 2px chocolate;">
+<div style="height:210%; 
+width: 100%;box-shadow: 2px chocolate; background-color: white;">
 <!-- menu for admin dashboard -->
 <button mat-button [matMenuTriggerFor]="belowMenu">Menu<mat-icon>menu</mat-icon></button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
@@ -8,11 +8,14 @@ width: 100%;box-shadow: 2px chocolate;">
   <button mat-raised-button color="warn" routerLink="/admin">Logout</button>
  <!-- Adding new item in product -->
 </mat-menu>
+<div *ngIf="!open && !list" style="height: 40%;width: 100%;">
 <h1 style="text-align: center;"><strong>Welcome to Admin Dashboard</strong></h1>
-<hr>
-
-<div *ngIf="open" class="productForm" style="background-image: url('');">
-  <h1 style="margin-top: 5%;">Fill Food Details</h1>
+<img src="https://ontrackangular-staging.herokuapp.com/assets/img/form-protect-screen.svg" 
+style="height: 40%;width: 100%;"
+alt="">
+</div>
+<div *ngIf="open" class="productForm" style="background-image: url('https://thumbs.dreamstime.com/b/italian-food-background-different-types-pasta-health-vegetarian-concept-top-view-copy-space-italian-food-114155664.jpg');">
+  <h1 style="margin-top: 5%;"><strong>Fill Food Details</strong></h1>
   <form [formGroup]="productForm">
     <!-- <mat-form-field appearance="fill">
       <mat-label>Enter FoodId</mat-label>
@@ -41,7 +44,7 @@ width: 100%;box-shadow: 2px chocolate;">
     </mat-form-field><br>
     <button
 mat-raised-button
-color="accent"
+color="warn"
 (click)="addFood()"
 >
 Add Food
@@ -51,7 +54,7 @@ Add Food
 
 <!-- display all item from products -->
 
-<div *ngIf="list && !open" class="container">
+<div *ngIf="list && !open" class="container" style="background-color: white;">
 <table class="table table-hover table-bordered ">
   <thead>
     <th>Food Name</th>
@@ -62,14 +65,15 @@ Add Food
   </thead>
   <tbody>
     <tr *ngFor="let pro of products">
-      <td>{{pro.productName}}</td>
-      <td>{{pro.price}}</td>
-      <td><img src="{{pro.productImage}}" alt=""></td>
-      <td><mat-icon>edit</mat-icon></td>
-      <td><img src="{{pro.productImg}}" alt=""></td>
-      <td><span><mat-icon (click)="openModal(template);editProductDetails(pro);">edit</mat-icon></span></td>
+      <td  class="w-25">{{pro.productName}}</td>
+      <td  class="w-25">{{pro.price}}</td>
+      <!-- <td><img src="{{pro.productImage}}" alt=""></td> -->
+      <td class="w-25"><img class="img-fluid img-thumbnail" src="{{pro.productImg}}" alt=""></td>
+      <!-- <td><mat-icon>edit</mat-icon></td> -->
+      
+      <td  class="w-25"><span><mat-icon (click)="openModal(template);editProductDetails(pro);">edit</mat-icon></span></td>
 
-      <td><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
+      <td  class="w-25"><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
     </tr>
   </tbody>
 </table>

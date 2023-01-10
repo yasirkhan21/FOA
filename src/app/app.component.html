@@ -23,12 +23,15 @@ overflow-x: hidden;">
     >
       Hungrezy <mat-icon>restaurant</mat-icon>
     </h1>
+    
     <a routerLink="cart" mat-button style="margin-left: 60%; color:#FF7B54"
      class="icon" ><mat-icon [matBadge]="cartItem.length" color="accent"> fastfood</mat-icon>Cart</a
     >
-    <a routerLink="login" mat-button style="margin-left: 70px; color:#FF7B54"
+    <a routerLink="login" mat-button style="margin-left: 50px; color:#FF7B54"
     class="icon"><mat-icon>perm_identity</mat-icon>Login</a
     >
+    <button mat-button color="warn" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">SignOut</button>
+
   </mat-toolbar>
   <mat-sidenav-container class="example-container" autosize>
     <mat-sidenav
@@ -41,7 +44,7 @@ overflow-x: hidden;">
       <mat-nav-list *ngIf="isExpanded">
         <mat-list-item class="parent">
 
-          <span style="color:#FF7B54"><a mat-list-item routerLink="admin"  >
+          <span style="color:#FF7B54"><a mat-list-item routerLink="admin">
             <mat-icon>account_circle</mat-icon>Admin</a></span>
         </mat-list-item>
       </mat-nav-list>

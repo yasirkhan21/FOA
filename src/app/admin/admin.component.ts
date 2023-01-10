@@ -14,8 +14,8 @@ export class AdminComponent implements OnInit{
   constructor(private route: Router,private fb:FormBuilder,private cs:ServiceService,private toast:ToastrService) { }
   ngOnInit(): void {
    this.admin=this.fb.group({
-    userName:['',],
-    password:['',]
+    userName:['',[Validators.required]],
+    password:['',[Validators.required]]
    })
   }
   
