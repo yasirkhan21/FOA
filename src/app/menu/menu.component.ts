@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 export class MenuComponent implements OnInit {
   constructor(private cs: ServiceService, private toast: ToastrService, private dataService: DataService) { }
   product!: Products[];
+  cartItem!: Carts;
   ngOnInit(): void {
     // this.cs.getProduct().subscribe(list => {
     //   this.product = list;
@@ -29,10 +30,18 @@ export class MenuComponent implements OnInit {
   //   });
   // }
 
-  addtoCart(cartItem: Carts): void {
-    cartItem.userId = this.dataService.UserId;
+  addtoCart(pro: Products): void {
+    console.log(pro);
+    // this.cartItem.userId = this.dataService.getUserId();
+    const car: Carts = {
+      price: pro.price,
+      productImage: pro.productImage,
+      productName: pro.productName,
+      userId: this.dataService.getUserId()
+    }
+    console.log(car);
     if (true) {
-      this.dataService.createCarts(cartItem).then(() => {
+      this.dataService.createCarts(car).then(() => {
         console.log('Created new item successfully!');
       });
     }

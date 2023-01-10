@@ -3,48 +3,48 @@
     {
       "id": 2,
       "productName": "Paneer Tikka",
-      "productImg": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
+      "productImage": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
       "price": "249"
     },
     {
       "productName": "Burger",
-      "productImg": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "productImage": "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "150",
       "id": 3
     },
     {
       "productName": "Pizza",
-      "productImg": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "productImage": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "199",
       "id": 4
     },
     {
       "productName": "Biryani",
-      "productImg": "https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg",
+      "productImage": "https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg",
       "price": "195",
       "id": 5
     },
     {
       "productName": "Chole Bhature",
-      "productImg": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
+      "productImage": "https://curlytales.com/wp-content/uploads/2017/06/Shiv-Mishthan-Bhandar.jpg",
       "price": "180",
       "id": 6
     },
     {
       "productName": "Khichdi",
-      "productImg": "https://c.ndtvimg.com/2022-03/j5jbs6g_khichdi_625x300_25_March_22.jpg",
+      "productImage": "https://c.ndtvimg.com/2022-03/j5jbs6g_khichdi_625x300_25_March_22.jpg",
       "price": "149",
       "id": 7
     },
     {
       "productName": "Veg Thali",
-      "productImg": "https://b.zmtcdn.com/data/pictures/7/113797/740f0113f749cbde02181585993b0e05.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+      "productImage": "https://b.zmtcdn.com/data/pictures/7/113797/740f0113f749cbde02181585993b0e05.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
       "price": "249",
       "id": 8
     },
     {
       "productName": "Dal Baati",
-      "productImg": "https://img.traveltriangle.com/blog/wp-content/uploads/2018/01/shutterstock_4148348021.jpg",
+      "productImage": "https://img.traveltriangle.com/blog/wp-content/uploads/2018/01/shutterstock_4148348021.jpg",
       "price": "150",
       "id": 9
     }

@@ -13,7 +13,7 @@ import { Carts } from '../shared/services/carts';
 })
 export class CartComponent implements OnInit {
   constructor(private service: ServiceService, private toast: ToastrService, private dataService : DataService) { }
-  cartList!: Carts[];
+  cartList!: any;
   ngOnInit(): void {
     this.getCartItem();
 
@@ -42,12 +42,14 @@ export class CartComponent implements OnInit {
       )
     ).subscribe(data => {
       this.cartList = data;
+      console.log(data)
     });
   }
 
-  removeCartItem(id: number=0): void {
-    if (id) {
-      this.dataService.deleteCarts(id.toString())
+  removeCartItem(key: string): void {
+    console.log(key);
+    if (key) {
+      this.dataService.deleteCarts(key.toString())
         .then(() => {
           console.log('Created new item successfully!');
         })
