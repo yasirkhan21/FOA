@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -5,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{MatFormFieldModule} from '@angular/material/form-field'
-import{MatInputModule}from '@angular/material/input'
-import{ReactiveFormsModule}from '@angular/forms'
-import{MatIconModule}from '@angular/material/icon'
-import { MaterialModule} from './materialModule';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatIconModule } from '@angular/material/icon'
+import { MaterialModule } from './materialModule';
 import { MatCardModule } from "@angular/material/card";
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BillingComponent } from './billing/billing.component';
 import { RegisterComponent } from './register/register.component';
@@ -45,11 +46,13 @@ import { environment } from 'src/environment/environment';
     CustomerDashboardComponent,
     CartComponent,
     MenuComponent,
-    SignInComponent,
-  
-
+    SignInComponent
   ],
   imports: [
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -63,17 +66,10 @@ import { environment } from 'src/environment/environment';
     MatCardModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    ToastrModule.forRoot({
-    //   timeOut:5000,
-    //  closeButton:true,
-    //  toastClass: "toast border-red",
-    }),
-    ModalModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

@@ -7,6 +7,8 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -39,7 +41,7 @@ export class AuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            console.log(user);
+            // console.log(user);
             this.router.navigate(['home']);
           }
         });
@@ -57,7 +59,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
-        console.log(result.user)
+        // console.log(result.user)
       })
       .catch((error) => {
         window.alert(error.message);
@@ -85,7 +87,9 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
+    // console.log(user);
     return user !== null && user.emailVerified !== false ? true : false;
+
   }
   // Sign in with Google
   GoogleAuth() {
@@ -119,6 +123,7 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
+    // console.log(user);
     return userRef.set(userData, {
       merge: true,
     });

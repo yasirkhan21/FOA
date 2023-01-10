@@ -23,7 +23,7 @@ export class AdminDashboardComponent implements OnInit {
   //     productImg: ['',],
   //     price: ['',]
   //   })
-   
+
   //   this.retrieveProducts();
   // }
   // addFood() {
@@ -83,7 +83,12 @@ export class AdminDashboardComponent implements OnInit {
   //       })
   //       .catch(err => console.log(err));
   //   }
-  constructor(private cs: ServiceService, private fb: FormBuilder, private modalService: BsModalService, private toast: ToastrService) { }
+  constructor(
+    private cs: ServiceService,
+    private fb: FormBuilder, 
+    private modalService: BsModalService, 
+    private toast: ToastrService,
+    private dataService: DataService) { }
 
   modalRef?: BsModalRef;
   openModal(template: TemplateRef<any>) {
@@ -92,74 +97,79 @@ export class AdminDashboardComponent implements OnInit {
   open: boolean = false;
   list: boolean = false;
   productForm!: FormGroup;
-  products!: any[];
-  product!: any;
+  products!: Products[];
+  product!: Products;
   ngOnInit(): void {
     this.productForm = this.fb.group({
       id: ['',],
-      productName: ['',[Validators.required]],
-      productImg: ['',[Validators.required]],
-      price: ['',[Validators.required]]
+      productName: ['', [Validators.required]],
+      productImg: ['', [Validators.required]],
+      price: ['', [Validators.required]]
     })
-    this.getProducts();
+    // this.getProducts();
+    this.retrieveProducts();
   }
 
   // adding new item in food
   addFood() {
     if (this.productForm.valid) {
-      this.cs.addProduct(this.productForm.value).subscribe(res=>{
+      this.cs.addProduct(this.productForm.value).subscribe(res => {
         this.toast.success("Product added")
-        this.getProducts();
+        // this.getProducts();
+        this.retrieveProducts();
         this.list = true;
         this.open = false;
-  
+
       });
     }
-    else{
+    else {
       this.toast.error("Enter valid value");
     }
   }
-  //delete item from product
-  deleteProduct(id: number) {
-    this.cs.deleteProduct(id).subscribe(res=>{
-      this.toast.success("Product Deleted");
-      this.getProducts();
+
+  // deleteProduct(id: number = 0) {
+  //   this.cs.deleteProduct(id).subscribe();
+  //   alert("Product deleted")
+  //   window.location.reload();
+  // }
+
+  // updateProduct(product: any) {
+
+  // }
+
+  retrieveProducts(): void {
+    this.dataService.getAllProducts().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.products = data;
+      console.log(data);
     });
-   
-  
+  }
+  saveProduct(): void {
+    this.dataService.createProducts(this.productForm.value).then(() => {
+      console.log('Created new item successfully!');
+    });
   }
 
-  //calling modal and setting values for updating
-  editProductDetails(pro: any) {
+  updateProduct(pro:Products): void {
+    if (pro.id) {
+      this.dataService.updateProducts(pro.id.toString(), pro)
+        .then(() => console.log('Created new item successfully!'))
+        .catch(err => console.log(err));
+    }
+  }
 
-    this.product = pro;
-    this.productForm.setValue(this.product);
-  }
-  //update items in products
-  updateProduct(product: any) {
-    console.log(product);
-    if(this.productForm.valid){
-    this.cs.updateProduct(product.id, product).subscribe(res => {
-      this.toast.success("Product updated");
-      this.productForm.reset();
-      this.modalRef?.hide()
-      this.getProducts();
-    },(err)=>{
-      this.toast.error("Something went wrong")
+  deleteProduct(id: number = 0): void {
+    if (id) {
+      this.dataService.deleteProducts(id.toString())
+        .then(() => {
+          console.log('Created new item successfully!');
+        })
+        .catch(err => console.log(err));
     }
-    );
-    }
-    else{
-      this.toast.error("Something went wrong")
-    }
-  }
-//get all the products
-  getProducts() {
-    this.cs.getProduct().subscribe(list => {
-      this.products = list;
-    })
-  }
-  reset(){
-    this.productForm.reset();
   }
 }

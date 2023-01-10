@@ -45,7 +45,7 @@ alt="">
     <button
 mat-raised-button
 color="warn"
-(click)="addFood()"
+(click)="saveProduct()"
 >
 Add Food
 </button>
@@ -68,10 +68,10 @@ Add Food
       <td  class="w-25">{{pro.productName}}</td>
       <td  class="w-25">{{pro.price}}</td>
       <!-- <td><img src="{{pro.productImage}}" alt=""></td> -->
-      <td class="w-25"><img class="img-fluid img-thumbnail" src="{{pro.productImg}}" alt=""></td>
+      <td class="w-25"><img class="img-fluid img-thumbnail" src="{{pro.productImage}}" alt=""></td>
       <!-- <td><mat-icon>edit</mat-icon></td> -->
       
-      <td  class="w-25"><span><mat-icon (click)="openModal(template);editProductDetails(pro);">edit</mat-icon></span></td>
+      <td  class="w-25"><span><mat-icon (click)="openModal(template);updateProduct(pro);">edit</mat-icon></span></td>
 
       <td  class="w-25"><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
     </tr>
@@ -83,7 +83,7 @@ Add Food
 <ng-template #template>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Update Product Details</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide();reset()">
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide();">
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>

@@ -3,5 +3,5 @@ export interface Carts {
     price?:string;
     productImage?:string;
     productName?:string;
-    userId:string;
+    userId?:string;
 }

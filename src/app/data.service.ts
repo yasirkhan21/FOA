@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 import { Products } from '../app/shared/services/products';
 import { Restaurants } from '../app/shared/services/restaurants';
 import { Carts } from './shared/services/carts';
+import { AdminLogin } from './shared/services/admin-login';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,18 @@ export class DataService {
   private dbPathProducts = '/products';
   private dbPathRestaurants = '/Resturants';
   private dbPathCart = '/Cart';
+  private dbPathUser = '/AdminLogin';
 
   productsRef: AngularFireList<Products>;
   restaurantsRef: AngularFireList<Restaurants>;
   cartsRef: AngularFireList<Carts>;
+  usersRef: AngularFireList<AdminLogin>;
 
   constructor(private db: AngularFireDatabase) {
     this.productsRef = db.list(this.dbPathProducts);
     this.restaurantsRef = db.list(this.dbPathRestaurants);
     this.cartsRef = db.list(this.dbPathCart);
+    this.usersRef = db.list(this.dbPathUser);
   }
   //#region Products
   getAllProducts(): AngularFireList<Products> {
@@ -75,16 +79,30 @@ export class DataService {
     return this.cartsRef.push(cart);
   }
 
-  updateCarts(id: string, value: any): Promise<void> {
-    return this.cartsRef.update(id, value);
-  }
+  // updateCarts(id: string, value: any): Promise<void> {
+  //   return this.cartsRef.update(id, value);
+  // }
 
   deleteCarts(id: string): Promise<void> {
     return this.cartsRef.remove(id);
   }
 
-  deleteAllCarts(): Promise<void> {
-    return this.cartsRef.remove();
+  // deleteAllCarts(): Promise<void> {
+  //   return this.cartsRef.remove();
+  // }
+  //#endregion
+
+  //#region User
+
+  createUser(adminLogin: AdminLogin): any {
+    return this.usersRef.push(adminLogin);
   }
   //#endregion
+
+  get UserId(): any {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    // console.log(user);
+    return user !== null && user.emailVerified !== false ? user.uid : "";
+
+  }
 }
