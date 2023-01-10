@@ -168,7 +168,7 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  deleteProduct(id: number = 0): void {
+  deleteProduct(id: string): void {
     if (id) {
       this.dataService.deleteProducts(id.toString())
         .then(() => {

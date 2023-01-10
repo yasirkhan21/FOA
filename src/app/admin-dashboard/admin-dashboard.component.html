@@ -67,7 +67,7 @@ width: 100%;box-shadow: 2px chocolate; background-color: white;">
           <td class="w-25"><img class="img-fluid img-thumbnail" src="{{pro.productImage}}" alt=""></td>
           <!-- <td><mat-icon>edit</mat-icon></td> -->
           <td class="w-25"><span><mat-icon (click)="openModal(template);editProductDetails(pro);">edit</mat-icon></span></td>
-          <td class="w-25"><mat-icon (click)="deleteProduct(pro.id)">delete</mat-icon></td>
+          <td class="w-25"><mat-icon (click)="deleteProduct(pro.key)">delete</mat-icon></td>
         </tr>
       </tbody>
     </table>
