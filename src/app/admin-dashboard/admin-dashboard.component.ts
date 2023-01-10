@@ -97,13 +97,13 @@ export class AdminDashboardComponent implements OnInit {
   open: boolean = false;
   list: boolean = false;
   productForm!: FormGroup;
-  products!: Products[];
+  products!: any[];
   product!: Products;
   ngOnInit(): void {
     this.productForm = this.fb.group({
       id: ['',],
       productName: ['', [Validators.required]],
-      productImg: ['', [Validators.required]],
+      productImage: ['', [Validators.required]],
       price: ['', [Validators.required]]
     })
     // this.getProducts();
@@ -119,7 +119,6 @@ export class AdminDashboardComponent implements OnInit {
         this.retrieveProducts();
         this.list = true;
         this.open = false;
-
       });
     }
     else {
@@ -151,13 +150,19 @@ export class AdminDashboardComponent implements OnInit {
   }
   saveProduct(): void {
     this.dataService.createProducts(this.productForm.value).then(() => {
+      this.toast.success("Product added")
       console.log('Created new item successfully!');
     });
   }
 
-  updateProduct(pro:Products): void {
-    if (pro.id) {
-      this.dataService.updateProducts(pro.id.toString(), pro)
+  editProductDetails(pro: any) {
+    this.product = pro;
+    this.productForm.setValue(this.product);
+  }
+
+  updateProduct(pro:any): void {
+    if (pro.key) {
+      this.dataService.updateProducts(pro.key, pro)
         .then(() => console.log('Created new item successfully!'))
         .catch(err => console.log(err));
     }

@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
       )
     ).subscribe(data => {
       this.cartItem = data;
+      console.log(this.cartItem)
     });
   }
 
