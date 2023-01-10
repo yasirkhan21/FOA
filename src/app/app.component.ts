@@ -1,6 +1,8 @@
 import { Component, ViewChild,OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { DataService } from './data.service';
 import { ServiceService } from './service.service';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,7 @@ export class AppComponent implements OnInit {
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
-constructor(private service:ServiceService){}
+constructor(private service:ServiceService,private dataService: DataService,public authService: AuthService){}
 cartItem:any[]=[];
   ngOnInit(): void {
    this.service.getCartItem().subscribe(list=>{
