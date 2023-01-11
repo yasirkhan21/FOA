@@ -1,0 +1,81 @@
+.card {
+
+  max-width: 400px;
+
+  align-items: center;
+
+  align-content: center;
+
+  background-color: rgb(244, 235, 238);
+
+  margin-left: 35%;
+
+  margin-top: 2%;
+
+ 
+
+}
+
+.Container{
+
+  width: 100%;
+
+  margin: 2em;
+
+  height: auto;
+
+
+
+  background-size: cover;
+
+  background-position-y: -20vh;
+
+}
+
+.card1{
+
+  max-width: 400px;
+
+  align-items: center;
+
+  align-content: center;
+
+  background-color:rgb(235, 251, 230);
+
+  margin-left: 35%;
+
+ 
+
+}
+
+.card2{
+
+  max-width: 400px;
+
+  align-items: center;
+
+  align-content: center;
+
+  background-color: rgb(252, 255, 240);
+
+  margin-left: 35%;
+
+ 
+
+}
+
+.card3{
+
+  max-width: 400px;
+
+  align-items: center;
+
+  align-content: center;
+
+  background-color: rgb(240, 250, 255);
+
+  margin-left: 35%;
+
+ 
+
+}

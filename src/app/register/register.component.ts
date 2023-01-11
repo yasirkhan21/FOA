@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       ]],
       mob: ['', [Validators.required, Validators.pattern("@^[0-9]{10}$")]],
       userName: ['', [Validators.required]],
-      address: ['', [Validators.required]],
+      uid: ['', [Validators.required]],
 
     })
 

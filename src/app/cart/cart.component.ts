@@ -41,8 +41,10 @@ export class CartComponent implements OnInit {
         )
       )
     ).subscribe(data => {
+      
       this.cartList = data;
       console.log(data)
+      
     });
   }
 
@@ -51,6 +53,7 @@ export class CartComponent implements OnInit {
     if (key) {
       this.dataService.deleteCarts(key.toString())
         .then(() => {
+          this.toast.success("Item removed")
           console.log('Created new item successfully!');
         })
         .catch(err => console.log(err));

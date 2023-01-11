@@ -4,4 +4,24 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 72%;
+    height: max-content;
+    margin-top: 2em;
+    margin-left: 6%;
+}
+.Container{
+    width: 40%; 
+}
+.Col-70{
+    margin-left: 4em;
+}
+.Col-35{
+    margin-left: 1em;
+}
+.form{
+
+    width: 70%;
+}
+.whole{
+    background-image: url("/assets/image/food 36.webp");
 }

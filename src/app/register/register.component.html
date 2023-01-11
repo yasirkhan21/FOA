@@ -1,81 +1,81 @@
-<div style="background-size: cover;background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgIBwcHBwoICAcHBwoHBwcHCA8ICQcKIBEWIhURExMYHSggGCYxGx8fITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDw0NEisZFRktNy0uKysrKy03NzcrLS0rKzctLS03KysrLSstKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQIDBAUHBv/EABcQAQEBAQAAAAAAAAAAAAAAAAABEQL/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAGxEBAQEBAQEBAQAAAAAAAAAAABEBAgMxEiH/2gAMAwEAAhEDEQA/AP2oB8ZsAAANBAc91QBkGOo6JY684V5+o59R6Oo5dR6eMdedcOox1HbqMWPXxy65rhYzY62M2PVxy6ZrlYzY63lmx6eeW81ysZsdbEsdsazXKxMdMSxqtVzxMdMTFrVYxMbxMKtQXFEQXFBFFREFAr+iAfkXyAAAEY3VAGfoKDpzyCmK7c8ox1HLqPRZrHXD08crnTzdcud5eq8MXl7OOXXOnmvLN5ei8sXl6Of46Z0895Zsd7yxY6ZredONjNjtYzY3mt5rjiWOtjNi1rNc8THTExqtVzxMdMTFq1zwxvExatQXDAqKuCIirgD74D8k+UAM7qoAx9BRXTnkFkJFejnhkXCRqR6OPNKki4o9GcxHPrlz65ehm8uma1mvL1y53l6euWOuW86dM6ea8sXl6LyxeXTNdM6cLGbHaxm8t5rpnThYljrYzY1mt5rlYmOtjNjVazXPExuxMWrWMTG8TFrVYwxvExatZVcMCoNIiV91AflNfMBFc9UUix044SmLIsWR6uPNKSLIsivVz5xlMUHUAAAASxz65dUsXNXNefrli8vT1y59ct5redPPeWLy73li8t5rpnThYzY73li8t5rpmuNjNjtYzY1mtZrlYzY62JY1W65WJjpYmLVrnhjeJi1axhjeJi1ayNYFK+uIPyevm1ViSNSOnHnUqxZCRp7fPyZ3SRpB6c5zEqiDRVE00KoAUVAWqIIVWbyoLXPrlzvL0WaxeWs1rOnnvLF5ei8sWN5rpnTheWbHa8s2N5rea42M2OtiWNZrea42JjrYzY1Wq54mOmJi1queGN4mLVrGKuBSvpLIkjcj855+W6+bukjUhIr6HHlmfWN1RB2SqIKVRAKogFURQoALVNQQq6agFa0ZBaWMWNitZ042M2O1jFjWa3nbjYzY7WMWNZrpnTlYljrYzY1XTOnLEsdLEsarWa54mOmJi1a54N4LVr3yNSA8XHnnL5e6og2lUQCqIBVEAqiClUQCqIBVEEKogFUQCqrJotaZsNXQrFjFjqzY1mt525WM2OtjNjWa6Z252JjdiWLXTO2MZxvExqt50ziNgv6ewQcXzlEBKqAFAAoAFBASqIBVE0CqJpoVRNNCqJpoVRNNCqIC1VZAq4zYqi5052M2OtjNjWa3nbliY6WM2NVvO2MGsUa/buCObyqgKlBAKogFVAEAAAQKogJVEAqiAVRAKogFUQCqIBVEAqiAtWxmxQXOmcGhav7aEEQAEBASqgKAAgIBVEBKoiBVEAq6agJV01AKogFUQCqIBVNQCrpqAVdNQCrogFbBEdABUAQSggJVEBABQBBKogFUQEoBoUEAqiAlUQCqagpV01ECtaagFXRAKogFdAGXUQA0QBkAUEAQAEBARUAAAQAUAAQUEQAAAAAQAAAAAFf/2Q==);">
-    <h1 style="color:darkblue;text-align: center;top: 10px;"><b>Registration Form</b></h1>
-    <div class="parent">
-    <form [formGroup]="regform" style="margin: 30px; background-color: rgba(255, 255, 255, 0.417);height: 600px;">
-    <div><mat-label style="margin-top: 10px;"><b>Full Name</b></mat-label></div>
-    <div>
-        <mat-form-field appearance ="fill" style="margin-top: 10px;">
-        <input matInput placeholder="Enter fullName" formControlName="fullName">
-        <mat-icon class="material-icons" matSuffix>people</mat-icon>
-        <mat-error *ngIf="this.regform.controls['fullName'].hasError('required')">
-          <span>*Name is required</span>
-        </mat-error> 
-        </mat-form-field>
-        </div>
-
-        <div>
-            <mat-form-field appearance ="fill" style="margin-top: 10px;">
-            <input matInput placeholder="Enter userName" formControlName="userName">
-            <mat-icon class="material-icons" matSuffix>people</mat-icon>
-            <mat-error *ngIf="this.regform.controls['userName'].hasError('required')">
-              <span>*userName is required</span>
-            </mat-error> 
-            </mat-form-field>
-            </div>
-    
-        <div><mat-label><b>Email</b></mat-label></div>
-    <div>
-        <mat-form-field appearance ="fill">
-        <input matInput placeholder="Enter email" formControlName="email">
-        <mat-icon class="material-icons" matSuffix>email</mat-icon>
-        <mat-error *ngIf="this.regform.controls['email'].hasError('email')">
-          <span>*Email is invalid</span>
-        </mat-error> 
-        </mat-form-field>
-        </div>
-    
-        <div><mat-label><b>Password</b></mat-label></div>
-        <div>
-    
-            <mat-form-field appearance="fill">
-              <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-              <mat-error *ngIf="this.regform.controls['password'].hasError('required')">
-                <span>*Password is required</span>
-              </mat-error> 
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-            </div>
-
-            <div><mat-label><b>Mobile No</b></mat-label></div>
-            <div>
-            <mat-form-field appearance ="fill">
-            <input matInput placeholder="Enter mob" formControlName="mob">
-            <mat-icon class="material-icons" matSuffix>phone</mat-icon>
-            <mat-error *ngIf="this.regform.controls['mob'].hasError('required')">
-                <span>*Mobile No. is required</span>
-              </mat-error> 
-            </mat-form-field>
-            </div>
-    
-             <br>
-                   
-            <mat-form-field appearance="fill">
-            <mat-label>Present Address</mat-label>
-            <textarea matInput  placeholder="address" formControlName="address" (keyup)="onKeyUp($event)" required></textarea>
-            <mat-icon class="material-icons" matSuffix>home</mat-icon>
-            <div>
-            {{numberOfCharacters1}} / {{maxNumberOfCharacters}}
-            </div>
-            </mat-form-field> <br>
-
-            <div>
-            <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="onSubmit()">Register</button>
-            </div>  
-
-            </form>
-            </div>
+<div style="background-size: cover;" class="whole">
+ 
+ 
+  <div class="parent" >
+   
+  <form [formGroup]="regform" style="margin-left: 100%; margin-bottom: 6em; " class="Container">
+    <h1 style="color:rgb(247, 243, 239) ; text-align: center; top: 10px; margin-top: 1em;"><u>Register Here</u></h1>
+  <div>
+      <mat-form-field appearance ="fill">
+      <input matInput placeholder="Enter fullName" formControlName="fullName">
+      <mat-icon class="material-icons" matSuffix>people</mat-icon>
+      <mat-error *ngIf="this.regform.controls['fullName'].hasError('required')">
+        <span>*Name is required</span>
+      </mat-error> 
+      </mat-form-field>
     </div>
+      <div>
+          <mat-form-field appearance ="fill" >
+          <input matInput placeholder="Enter userName" formControlName="userName">
+          <mat-icon class="material-icons" matSuffix>people</mat-icon>
+          <mat-error *ngIf="this.regform.controls['userName'].hasError('required')">
+            <span>*userName is required</span>
+          </mat-error> 
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance ="fill">
+            <input matInput placeholder="Enter email" formControlName="email">
+            <mat-icon class="material-icons" matSuffix>email</mat-icon>
+            <mat-error *ngIf="this.regform.controls['email'].hasError('required')">
+              <span>*Email is required</span>
+            </mat-error> 
+            <mat-error *ngIf="this.regform.controls['email'].hasError('email')">
+              <span>*Invalid Email Format</span>
+            </mat-error>
+            </mat-form-field>
+          </div>  
+    
+  <div>
+          <mat-form-field appearance="fill" >
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-error *ngIf="this.regform.controls['password'].hasError('required')">
+              <span>*Password is required</span>
+            </mat-error> 
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          
+        </div>
+          
+          <div>
+          <mat-form-field appearance ="fill">
+          <input matInput placeholder="Enter mob" formControlName="mob">
+          <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+          <mat-error *ngIf="this.regform.controls['mob'].hasError('required')">
+              <span>*Mobile No. is required</span>
+            </mat-error> 
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance ="fill" >
+          <input matInput placeholder="Enter uid" formControlName="uid">
+          <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+          <mat-error *ngIf="this.regform.controls['uid'].hasError('required')">
+              <span>*UID is required</span>
+            </mat-error> 
+          </mat-form-field> <br>
+        </div>
+          <div>
+          <button mat-raised-button class="createUserBtn" color="primary" style="background-color: rgb(224, 89, 89);" type="submit" (click)="onSubmit()">Register</button>
+          </div>  
+          <br>
+          </form>
+       
+          </div>
+       
+  </div>
 

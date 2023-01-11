@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterForm } from '../models/registerForm';
 import { ServiceService } from '../service.service';
 import { AuthService } from "src/app/shared/services/auth.service";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AuthService } from "src/app/shared/services/auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb:FormBuilder,private cs:ServiceService,private router:Router,public authService: AuthService){}
+  constructor(private fb:FormBuilder,private cs:ServiceService,private router:Router,public authService: AuthService,private toast:ToastrService){}
   regform!:FormGroup;
   r!:RegisterForm[];
   hide = true;
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
     if(element.userName==this.regform.value.userName && element.password==this.regform.value.password)
     {
       // this.router.navigate(['/']);
-      window.alert("Successful login");
+     this.toast.success("Login Successfull");
     }
    });
     // this.cs.registerSave(this.regform.value).subscribe();

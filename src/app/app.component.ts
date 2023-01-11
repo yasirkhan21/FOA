@@ -20,20 +20,13 @@ export class AppComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
   constructor(private service: ServiceService, private dataService: DataService, public authService: AuthService) { }
-  cartItem!: Carts[];
+  cartItem: Carts[]=[];
+  user:any;
   ngOnInit(): void {
-    // this.service.getCartItem().subscribe(list => {
-    //   this.cartItem = list;
-    // })
+     this.user = JSON.parse(localStorage.getItem('user')!);
+     console.log(this.user)
     this.getCartItem();
   }
-  // ngDoCheck(){
-  //   this.service.getCartItem().subscribe(list=>{
-  //     this.cartItem=list;
-  //     console.log(2);
-  //    })
-  //    console.log(1);
-  // }
 
   getCartItem(): void {
     this.dataService.getAllCarts().snapshotChanges().pipe(
@@ -46,6 +39,6 @@ export class AppComponent implements OnInit {
       this.cartItem = data;
       console.log(this.cartItem)
     });
-  }
+  } 
 
 }

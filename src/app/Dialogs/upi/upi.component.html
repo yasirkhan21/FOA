@@ -1,0 +1,40 @@
+<form [formGroup]="form">
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;">
+    <input matInput placeholder="Enter UPI id" formControlName="upiId">
+    <mat-icon class="material-icons" matSuffix>id</mat-icon>
+    <mat-error *ngIf="this.form.controls['upiId'].hasError('required')">
+        *UPI Id is required
+        </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;">
+    <input matInput placeholder="Enter MobileNo" formControlName="mob">
+    <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+    <mat-error *ngIf="this.form.controls['mob'].hasError('required')">
+        *Mobile Number is required
+        </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;">
+    <input matInput placeholder="Enter OTP" formControlName="otp">
+    <mat-icon class="material-icons" matSuffix>money</mat-icon>
+    <mat-error *ngIf="this.form.controls['otp'].hasError('required')">
+        *OTP is required
+        </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="payment()">Make Payment</button>
+   </div>  
+   <div mat-dialog-actions>
+
+    <button mat-button mat-dialog-close>Close</button>
+    
+    </div>
+    </form>

@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit {
     console.log(car);
     if (true) {
       this.dataService.createCarts(car).then(() => {
+        this.toast.success("Item added")
         console.log('Created new item successfully!');
       });
     }

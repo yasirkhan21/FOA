@@ -3,3 +3,23 @@ img{
     width: 708px;
     /* border-radius: 50%; */
 }
+/* .cart{
+    background-image: url('https://media.istockphoto.com/id/1203053357/photo/the-concept-of-cooking-meat-the-chef-cook-salt-on-the-cooked-steak-on-a-black-background-a.jpg?s=170667a&w=0&k=20&c=BdGCPlfOZbV6HfPxBEZ2a5uvJukUFaAN9Kkmg-UPTX4=');
+    background-repeat: no-repeat;
+} */
+.cartbg{
+    /* background-image: url('https://media.istockphoto.com/id/1203053357/photo/the-concept-of-cooking-meat-the-chef-cook-salt-on-the-cooked-steak-on-a-black-background-a.jpg?s=170667a&w=0&k=20&c=BdGCPlfOZbV6HfPxBEZ2a5uvJukUFaAN9Kkmg-UPTX4='); */
+    /* background-image: linear-gradient(#ffffff 30%,#bf9c75 90%); */
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    margin-left: 1%;
+}
+.sideimg{
+    height: auto;
+    width: auto;
+}
+.imgNew{
+    margin-left: 1%;
+    margin-bottom: 1%;
+}

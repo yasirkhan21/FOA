@@ -1,1 +1,203 @@
-<p>billing works!</p>
+<div class ="Container" style="background-size: cover ">
+
+  <h1 style="text-align: center; font-size: 30px;"><b>Bill Details</b></h1>
+
+  <mat-card class="card"  >
+
+   
+
+    <mat-card-header >
+
+      <mat-card-title>Order Details</mat-card-title>
+
+      <mat-icon>restaurant</mat-icon>
+
+    </mat-card-header>
+
+    <div *ngFor="let item of cartList">
+
+    <mat-card-content>
+
+      <div>
+
+      <p>Food Item: {{item.productName}}</p>
+
+      </div>
+
+      <mat-divider></mat-divider>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+      <button style="background-color: rgb(152, 222, 160);" mat-button routerLink="/menu">Add more items</button>
+
+      <button style="background-color: rgb(246, 99, 99); margin-left: 1em;" mat-button (click)="cancelOrder(item.key)">Remove Item</button>
+
+    </mat-card-actions>
+
+  </div>
+
+    <router-outlet></router-outlet>
+
+    </mat-card>
+
+<br>
+
+<br>
+
+
+
+    <mat-card class="card1">
+
+        <mat-card-header>
+
+          <mat-card-title>Coupons</mat-card-title>
+
+          <mat-icon>money</mat-icon>
+
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <p>Avail your coupon and save Rs.30</p>
+
+          <mat-divider></mat-divider>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+
+          <div *ngIf="!couponBool && !b">
+
+          <button style="background-color: rgb(237, 216, 161);" mat-button (click)="couponApplied()">Apply Coupon</button>
+
+          </div>
+
+          <div *ngIf="couponBool">
+
+         <button style="background-color: rgb(237, 216, 161);" mat-button (click)="couponRemoved()">Remove Coupon</button>
+
+         </div>
+
+        </mat-card-actions>
+
+        </mat-card>
+
+          <br>
+
+          <br>
+
+        <mat-card class="card2">
+
+            <mat-card-header>
+
+             <mat-icon>payment</mat-icon>
+
+            <mat-card-title>Bill Summary</mat-card-title>
+
+            </mat-card-header>
+
+            <mat-card-content>
+
+              <div *ngFor="let item of cartList">
+
+                <p>Food Item:{{item.productName}} </p>
+
+                <p>Price:{{item.price}}</p>
+
+              </div>
+
+              <div *ngIf="clicked">
+
+              <p>TotalCost:{{grandTotal}} including taxes</p>
+
+              </div>
+
+
+
+              <mat-divider></mat-divider>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <div *ngIf="clicked">
+
+                <b>GrandTotal:{{grandTotal}}</b>
+
+                </div>
+
+            </mat-card-actions>
+
+            </mat-card>
+
+<br>
+
+<br>
+
+<mat-card class="card3">
+
+  <mat-card-header>
+
+    <mat-card-title>Payment Methods:</mat-card-title>
+
+    <mat-icon>payment</mat-icon>
+
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <p>Select your payment method</p>
+
+    <mat-form-field appearance="fill">
+
+      <mat-label>Pay Using...</mat-label>
+
+      <mat-select>
+
+        <mat-option value="UPI" (click)="openDialog4()">UPI</mat-option>
+
+        <mat-option value="Card" (click)="openDialog3()">Card</mat-option>
+
+        <mat-option value="COD" (click)="openDialog()" >Cash On Delivery</mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+
+  </mat-card-actions>
+
+  </mat-card>
+
+<br>
+
+<br>
+
+<div *ngIf="couponBool">
+
+  <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="totalCost()" disabled="true">  Order Bill</button>
+
+</div>
+
+ <div *ngIf="!couponBool">
+
+  <button mat-raised-button style="margin-left: 36%; width: 30%;" class="createUserBtn" color="primary" type="submit" (click)="totalCost()">  Order Bill</button>
+
+ </div>
+
+ <br>
+
+ <br>
+
+  <div>
+
+  <button mat-raised-button style="margin-left: 36%; width: 30%;" class="createUserBtn" color="warn" type="submit" (click)="openDialog()">  Place Order</button>
+
+  </div>
+
+</div>

@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+  
   // constructor(private cs: ServiceService, private fb: FormBuilder, private dataService: DataService) { }
   // open: boolean = false;
   // list: boolean = false;
@@ -97,14 +98,25 @@ export class AdminDashboardComponent implements OnInit {
   open: boolean = false;
   list: boolean = false;
   productForm!: FormGroup;
+  productForm2!:FormGroup;
   products!: any[];
   product!: Products;
   ngOnInit(): void {
     this.productForm = this.fb.group({
       id: ['',],
+      // key:['',],
       productName: ['', [Validators.required]],
       productImage: ['', [Validators.required]],
       price: ['', [Validators.required]]
+    })
+    this.productForm2 = this.fb.group({
+
+      id: ['',],
+      key: ['',],
+      productName: ['', [Validators.required]],
+      productImage: ['', [Validators.required]],
+      price: ['', [Validators.required]]
+
     })
     // this.getProducts();
     this.retrieveProducts();
@@ -145,36 +157,66 @@ export class AdminDashboardComponent implements OnInit {
       )
     ).subscribe(data => {
       this.products = data;
-      console.log(data);
+      console.log( this.products,"products");
     });
   }
   saveProduct(): void {
     this.dataService.createProducts(this.productForm.value).then(() => {
-      this.toast.success("Product added")
-      console.log('Created new item successfully!');
+      this.toast.success("Product added") 
+      console.log(1);
+      this.productForm.reset();
     });
   }
 
-  editProductDetails(pro: any) {
-    this.product = pro;
-    this.productForm.setValue(this.product);
-  }
-
-  updateProduct(pro:any): void {
-    if (pro.key) {
-      this.dataService.updateProducts(pro.key, pro)
-        .then(() => console.log('Created new item successfully!'))
-        .catch(err => console.log(err));
-    }
-  }
 
   deleteProduct(id: string): void {
     if (id) {
       this.dataService.deleteProducts(id.toString())
         .then(() => {
-          console.log('Created new item successfully!');
+          this.toast.success("Product deleted");
         })
-        .catch(err => console.log(err));
+        .catch(err => this.toast.error(err)
+       );
+    }
+    else{
+      this.toast.error("Something went wrong");
     }
   }
+  //calling modal and setting values for updating
+
+  editProductDetails(pro: any) {
+    // this.product = pro;
+    // this.productForm.setValue(this.product);
+    // console.log(this.productForm,"pro",pro,"pro2",this.product)
+
+    const abs: any = {
+      id: pro.id,
+      productImage: pro.productImage,
+      productName: pro.productName,
+      price: pro.price,
+      key:pro.key
+    }
+
+    this.productForm2.setValue(abs);
+
+    console.log(this.product);
+
+  }
+
+  //update items in products
+  updateProduct(pro:any): void {
+    if (pro.key) {
+      console.log(pro)
+      this.dataService.updateProducts(pro.key, pro)
+        .then(() =>{this.toast.success("Updated")
+        console.log(2);
+        this.productForm.reset();
+      })
+        .catch(err => console.log(err));
+        
+    }
+    this.productForm.reset();
+    // this.toast.error("Something went wrong")
+  }
 }
+
