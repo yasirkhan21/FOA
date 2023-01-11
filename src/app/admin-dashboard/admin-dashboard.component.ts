@@ -85,8 +85,8 @@ export class AdminDashboardComponent implements OnInit {
   //   }
   constructor(
     private cs: ServiceService,
-    private fb: FormBuilder, 
-    private modalService: BsModalService, 
+    private fb: FormBuilder,
+    private modalService: BsModalService,
     private toast: ToastrService,
     private dataService: DataService) { }
 
@@ -97,11 +97,20 @@ export class AdminDashboardComponent implements OnInit {
   open: boolean = false;
   list: boolean = false;
   productForm!: FormGroup;
+  productForm2!: FormGroup;
   products!: any[];
   product!: Products;
   ngOnInit(): void {
     this.productForm = this.fb.group({
       id: ['',],
+      productName: ['', [Validators.required]],
+      productImage: ['', [Validators.required]],
+      price: ['', [Validators.required]]
+    })
+
+    this.productForm2 = this.fb.group({
+      id: ['',],
+      key: ['',],
       productName: ['', [Validators.required]],
       productImage: ['', [Validators.required]],
       price: ['', [Validators.required]]
@@ -156,11 +165,18 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   editProductDetails(pro: any) {
-    this.product = pro;
-    this.productForm.setValue(this.product);
+    const abs: any = {
+      key:pro.key,
+      productImage: pro.productImage,
+      productName: pro.productName,
+      price: pro.price
+    }
+    this.productForm2.setValue(pro);
+    console.log(abs);
   }
 
-  updateProduct(pro:any): void {
+  updateProduct(pro: any): void {
+    console.log(pro);
     if (pro.key) {
       this.dataService.updateProducts(pro.key, pro)
         .then(() => console.log('Created new item successfully!'))

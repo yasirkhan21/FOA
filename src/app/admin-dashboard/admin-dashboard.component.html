@@ -82,33 +82,35 @@ width: 100%;box-shadow: 2px chocolate; background-color: white;">
       </button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="productForm">
+      <form [formGroup]="productForm2">
         <mat-form-field appearance="fill" hidden>
-          <mat-label>Enter FoodId</mat-label>
           <input matInput placeholder="FoodId" formControlName="id">
         </mat-form-field><br>
+        <mat-form-field appearance="fill" hidden>
+          <input matInput placeholder="FoodId" formControlName="key">
+        </mat-form-field><br> 
         <mat-form-field appearance="fill">
           <mat-label>Enter Food</mat-label>
           <input matInput placeholder="Food Name" formControlName="productName">
-          <mat-error *ngIf="this.productForm.controls['productName'].hasError('required')">
+          <mat-error *ngIf="this.productForm2.controls['productName'].hasError('required')">
             *Required
           </mat-error>
         </mat-form-field><br>
         <mat-form-field appearance="fill">
           <mat-label>Enter Food Price</mat-label>
           <input matInput placeholder="Food Price" formControlName="price">
-          <mat-error *ngIf="this.productForm.controls['price'].hasError('required')">
+          <mat-error *ngIf="this.productForm2.controls['price'].hasError('required')">
             *Required
           </mat-error>
         </mat-form-field><br>
         <mat-form-field appearance="fill">
           <mat-label>Enter Food image Url</mat-label>
           <input matInput placeholder="Food image" formControlName="productImage">
-          <mat-error *ngIf="this.productForm.controls['productImage'].hasError('required')">
+          <mat-error *ngIf="this.productForm2.controls['productImage'].hasError('required')">
             *Required
           </mat-error>
         </mat-form-field><br>
-        <button mat-raised-button color="accent" (click)="updateProduct(productForm.value)">
+        <button mat-raised-button color="accent" (click)="updateProduct(productForm2.value)">
           Update
         </button>
       </form>

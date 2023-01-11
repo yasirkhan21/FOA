@@ -63,7 +63,6 @@ export class RegisterComponent implements OnInit {
         password: this.regform.value.password,
         uid:user.uid,
         fullName:this.regform.value.fullName
-        
       }
       this.dataService.createUser(userdata).then(() => {
         console.log('Created new item successfully!');
@@ -72,7 +71,4 @@ export class RegisterComponent implements OnInit {
     // this.cs.registerSave(this.regform.value).subscribe();
     window.alert("You have been registered!!!");
   }
-
-
-
 }
