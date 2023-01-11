@@ -33,5 +33,6 @@ onSubmit(){
      window.alert("Successful login");
    }
   });
+  window.location.reload();
 }
 }

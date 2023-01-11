@@ -27,7 +27,7 @@
       >Cart</a
     >
     <a
-      routerLink="login"
+      routerLink="/sign-in"
       mat-button
       style="margin-left: 50px; color: #ff7b54"
       class="icon" *ngIf="!authService.isLoggedIn"
@@ -40,7 +40,7 @@
       *ngIf="authService.isLoggedIn"
       (click)="authService.SignOut()"
     >
-      Log Out
+      <mat-icon>logout</mat-icon>Log Out
     </button>
   </mat-toolbar>
   <mat-sidenav-container class="example-container" autosize>

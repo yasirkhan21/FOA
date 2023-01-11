@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.cartItem = data;
+      this.cartItem = data.filter(x => x.userId == this.dataService.getUserId());
       console.log(this.cartItem)
     });
   } 

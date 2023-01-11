@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -18,7 +19,8 @@ export class AuthService {
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone,// NgZone service to remove outside scope warning
+    private toast:ToastrService
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -96,6 +98,8 @@ export class AuthService {
 
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
       this.router.navigate(['home']);
+      this.toast.success("User login sucessfully");
+      window.location.reload();
     });
   }
   // Auth logic to run auth providers
@@ -103,11 +107,13 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
+        this.toast.success("User login sucessfully");
         this.router.navigate(['home']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error);
+        this.toast.error(error);
+        // window.alert(error);
       });
   }
   /* Setting up user data when sign in with username/password, 
@@ -134,6 +140,7 @@ export class AuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
+      // window.location.reload();
     });
   }
 }

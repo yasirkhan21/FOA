@@ -5,6 +5,7 @@ import { map } from 'rxjs';
 import { DataService } from '../data.service';
 import { CancelOrderComponent } from '../Dialogs/cancel-order/cancel-order.component';
 import { CardComponent } from '../Dialogs/card/card.component';
+import { OrderConfirmedComponent } from '../Dialogs/order-confirmed/order-confirmed.component';
 import { PlaceOrderComponent } from '../Dialogs/place-order/place-order.component';
 import { RemoveCouponComponent } from '../Dialogs/remove-coupon/remove-coupon.component';
 import { UPIComponent } from '../Dialogs/upi/upi.component';
@@ -102,7 +103,7 @@ openDialog3()
 {
   this.dialog.open(CardComponent,{
     width: '350px',
-    height:'350px'
+    height:'400px'
   });
 }
 
@@ -113,7 +114,13 @@ openDialog4()
     height:'350px'
   });
 }
-
+openDialog5()
+{
+  this.dialog.open(OrderConfirmedComponent,{
+    width: '250px',
+    height:'250px'
+  });
+}
 
 //--------------------------method for getting the list of items in cart--------------------
 
@@ -125,7 +132,7 @@ getCartItem(): void {
       )
     )
   ).subscribe(data => {
-    this.cartList = data;
+    this.cartList = data.filter(x => x.userId == this.dataService.getUserId());
     console.log(data)
   });
 }
