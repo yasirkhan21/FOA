@@ -95,8 +95,13 @@ export class DataService {
 
   //#region User
 
+  
   createUser(adminLogin: AdminLogin): any {
     return this.usersRef.push(adminLogin);
+  }
+
+  getUser(): AngularFireList<AdminLogin> {
+    return this.usersRef;
   }
   //#endregion
 

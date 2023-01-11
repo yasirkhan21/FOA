@@ -47,6 +47,16 @@ export class CustomerDashboardComponent {
     //   this.resturants=res;})
     this.retrieveProducts();
     this.retrieveRestaurants();
+
+    this.dataService.getUser().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      console.log(data.find(x=>x.email=='admin123@gmail.com'));
+    });
   }
   // addFood(){
   //   if(this.productForm.valid)

@@ -56,7 +56,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
-        console.log(result.user)
+        this.router.navigate(['home']);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -67,7 +67,7 @@ export class AuthService {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
-        this.router.navigate(['sign-in']);
+        this.router.navigate(['home']);
       });
   }
   // Reset Forggot password

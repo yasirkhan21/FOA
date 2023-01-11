@@ -5,6 +5,7 @@ import { ServiceService } from '../service.service';
 import { AuthService } from "src/app/shared/services/auth.service";
 import { AdminLogin } from '../shared/services/admin-login';
 import { DataService } from '../data.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -51,9 +52,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.SignUp(this.regform.value.email, this.regform.value.password)
+    var a = this.authService.SignUp(this.regform.value.email, this.regform.value.password);
     const user = JSON.parse(localStorage.getItem('user')!);
-    console.log(user);
     if (user != null) {
       const userdata: AdminLogin = {
         id: user.uid,

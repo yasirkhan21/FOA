@@ -5,6 +5,7 @@ import { DataService } from '../data.service';
 import { Products } from '../shared/services/products';
 import { Carts } from '../shared/services/carts';
 import { map } from 'rxjs/operators';
+import { AuthService } from "src/app/shared/services/auth.service";
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  constructor(private cs: ServiceService, private toast: ToastrService, private dataService: DataService) { }
+  constructor(private cs: ServiceService, private toast: ToastrService, private dataService: DataService,public authService: AuthService) { }
   product!: Products[];
   cartItem!: Carts;
   ngOnInit(): void {
@@ -38,10 +39,12 @@ export class MenuComponent implements OnInit {
       productName: pro.productName,
       userId: this.dataService.getUserId()
     }
-    if (true) {
+    if (this.authService.isLoggedIn) {
       this.dataService.createCarts(car).then(() => {
         console.log('Created new item successfully!');
       });
+    }else{
+
     }
   }
 

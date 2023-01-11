@@ -5,6 +5,7 @@ import { ServiceService } from '../service.service';
 import { DataService } from '../data.service';
 import { map } from 'rxjs/operators';
 import { Carts } from '../shared/services/carts';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,8 +13,8 @@ import { Carts } from '../shared/services/carts';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  constructor(private service: ServiceService, private toast: ToastrService, private dataService : DataService) { }
-  cartList!: any;
+  constructor(private service: ServiceService, private toast: ToastrService, private dataService: DataService, public authService: AuthService) { }
+  cartList!: any[];
   ngOnInit(): void {
     this.getCartItem();
 
@@ -41,8 +42,7 @@ export class CartComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.cartList = data;
-      // console.log(data)
+      this.cartList = data.filter(x => x.userId == this.dataService.getUserId());
     });
   }
 
