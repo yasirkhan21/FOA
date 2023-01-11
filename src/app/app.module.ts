@@ -38,6 +38,8 @@ import { PlaceOrderComponent } from './Dialogs/place-order/place-order.component
 import { RemoveCouponComponent } from './Dialogs/remove-coupon/remove-coupon.component';
 import { CancelOrderComponent } from './Dialogs/cancel-order/cancel-order.component';
 import { CardComponent } from './Dialogs/card/card.component';
+import { OrderConfirmedComponent } from './Dialogs/order-confirmed/order-confirmed.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { CardComponent } from './Dialogs/card/card.component';
     PlaceOrderComponent,
     RemoveCouponComponent,
     CancelOrderComponent,
-    CardComponent
+    CardComponent,
+    OrderConfirmedComponent
+    
   ],
   imports: [
     AngularFireAuthModule,

@@ -13,7 +13,7 @@
   <mat-menu #belowMenu="matMenu" yPosition="below">
     <button mat-menu-item (click)="list = true; open = false">View Food</button>
     <button mat-menu-item (click)="open = true; list = false">Add Food</button>
-    <button mat-raised-button color="warn" routerLink="/admin">Logout</button>
+    <button mat-raised-button color="warn" routerLink="/admin"><mat-icon>logout</mat-icon>Logout</button>
     <!-- Adding new item in product -->
   </mat-menu>
   <div *ngIf="!open && !list" style="height: 40%; width: 100%">
@@ -22,7 +22,7 @@
     </h1>
     <img
       src="https://ontrackangular-staging.herokuapp.com/assets/img/form-protect-screen.svg"
-      style="height: 40%; width: 100%"
+      style="height: 50%; width: 100%"
       alt=""
     />
   </div>

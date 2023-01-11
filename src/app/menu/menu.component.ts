@@ -46,6 +46,9 @@ export class MenuComponent implements OnInit {
         console.log('Created new item successfully!');
       });
     }
+    else{
+      this.toast.warning("Please login first");
+    }
   }
 
   retrieveProducts(): void {

@@ -210,7 +210,7 @@ export class AdminDashboardComponent implements OnInit {
       this.dataService.updateProducts(pro.key, pro)
         .then(() =>{this.toast.success("Updated")
         console.log(2);
-        this.productForm.reset();
+        this.productForm2.reset();
       })
         .catch(err => console.log(err));
         

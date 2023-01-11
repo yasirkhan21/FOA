@@ -47,7 +47,7 @@
 
 </div>
 <div>
-  <h1 *ngIf="cartList.length==0">Empty Card</h1>
+  <h1 *ngIf="cartList?.length==0">Empty Card</h1>
   <button mat-flat-button color="warn" routerLink="/menu" >Add items</button>
 </div>
 

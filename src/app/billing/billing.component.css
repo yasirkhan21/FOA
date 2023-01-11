@@ -1,5 +1,4 @@
 .card {
-
   max-width: 400px;
 
   align-items: center;
@@ -8,48 +7,38 @@
 
   background-color: rgb(244, 235, 238);
 
-  margin-left: 35%;
+  margin-left: 3%;
 
   margin-top: 2%;
-
- 
-
 }
 
-.Container{
-
+.Container {
   width: 100%;
 
   margin: 2em;
 
   height: auto;
 
-
-
   background-size: cover;
 
   background-position-y: -20vh;
-
 }
 
-.card1{
-
+.card1 {
   max-width: 400px;
 
   align-items: center;
 
   align-content: center;
 
-  background-color:rgb(235, 251, 230);
+  background-color: rgb(235, 251, 230);
 
-  margin-left: 35%;
-
- 
-
+  margin-left: 39%;
+  height: 10%;
+  margin-top: 2%;
 }
 
-.card2{
-
+.card2 {
   max-width: 400px;
 
   align-items: center;
@@ -59,23 +48,17 @@
   background-color: rgb(252, 255, 240);
 
   margin-left: 35%;
-
- 
-
+  margin-top: -22%;
+  margin-top: -28.1%;
+  height: auto;
 }
 
-.card3{
-
-  max-width: 400px;
-
+.card3 {
+  width: 311px;
   align-items: center;
-
   align-content: center;
-
   background-color: rgb(240, 250, 255);
-
-  margin-left: 35%;
-
- 
-
+  margin-left: 67%;
+  height: 10%;
+  margin-top: -19%;
 }
