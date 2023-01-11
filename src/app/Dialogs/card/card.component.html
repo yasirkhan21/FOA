@@ -1,0 +1,53 @@
+<form [formGroup]="form">
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;" >
+    <input matInput  formControlName="cardNo" placeholder="Enter card Number" required>
+    <mat-icon class="material-icons" matSuffix>credit_card</mat-icon>
+    <mat-error *ngIf="this.form.controls['cardNo'].hasError('required')">
+    *Card Number is required
+    </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;">
+    <input matInput formControlName="fullName" placeholder="Enter fullName on card">
+    <mat-icon class="material-icons" matSuffix>people</mat-icon>
+    <mat-error *ngIf="this.form.controls['fullName'].hasError('required')">
+        <span>*Name is required</span>
+      </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field appearance ="fill" style="margin-top: 10px;">
+    <input matInput placeholder="Enter CVV" formControlName="cvv">
+    <mat-icon class="material-icons" matSuffix>money</mat-icon>
+    <mat-error *ngIf="this.form.controls['cvv'].hasError('required')">
+        <span>* CVV is required</span>
+      </mat-error> 
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field appearance="fill">
+   <mat-label>Expiry Date</mat-label>
+   <input matInput [matDatepicker]="picker" formControlName="date" class="form-control">
+   <mat-hint>MM/DD/YYYY</mat-hint>
+   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+   <mat-error *ngIf="this.form.controls['date'].hasError('required')">
+    <span>*Expiry date is required</span>
+  </mat-error> 
+   <mat-datepicker #picker></mat-datepicker>
+   </mat-form-field>
+   </div>
+
+<div>
+    <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="payment()">Make Payment</button>
+   </div>  
+   <div mat-dialog-actions>
+
+    <button mat-button mat-dialog-close>Close</button>
+    
+    </div>
+</form>

@@ -1,0 +1,23 @@
+.parent{
+    
+    height: 70%;
+    width: 35%;
+    border-radius: 15%;
+    margin-left: 26em;
+    margin-bottom: 2em;
+    text-align: center;
+    
+}
+.container{
+    background-image: url("/assets/image/food 25.jpg");
+    height: 100%;
+    width:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+      
+}
+.card{
+    margin-left: 30%;
+}

@@ -86,9 +86,6 @@
       "id": 4
     }
   ],
-<<<<<<< Updated upstream
-  "Cart": []
-=======
   "Cart": [
     {
       "productName": "Paneer Tikka",
@@ -121,5 +118,4 @@
       "id": 7
     }
   ]
->>>>>>> Stashed changes
 }

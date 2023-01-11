@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { BillingComponent } from './billing/billing.component';
 const routes: Routes = [
   { path: '', component: CustomerDashboardComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'home', component: CustomerDashboardComponent },
   { path: 'cart', component: CartComponent , canActivate: [AuthGuard] },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent }
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  {path:'billing',component:BillingComponent}
 ];
 
 @NgModule({

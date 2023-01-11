@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+  
   // constructor(private cs: ServiceService, private fb: FormBuilder, private dataService: DataService) { }
   // open: boolean = false;
   // list: boolean = false;
@@ -97,14 +98,25 @@ export class AdminDashboardComponent implements OnInit {
   open: boolean = false;
   list: boolean = false;
   productForm!: FormGroup;
-  products!: Products[];
+  productForm2!:FormGroup;
+  products!: any[];
   product!: Products;
   ngOnInit(): void {
     this.productForm = this.fb.group({
       id: ['',],
+      // key:['',],
       productName: ['', [Validators.required]],
-      productImg: ['', [Validators.required]],
+      productImage: ['', [Validators.required]],
       price: ['', [Validators.required]]
+    })
+    this.productForm2 = this.fb.group({
+
+      id: ['',],
+      key: ['',],
+      productName: ['', [Validators.required]],
+      productImage: ['', [Validators.required]],
+      price: ['', [Validators.required]]
+
     })
     // this.getProducts();
     this.retrieveProducts();
@@ -119,7 +131,6 @@ export class AdminDashboardComponent implements OnInit {
         this.retrieveProducts();
         this.list = true;
         this.open = false;
-
       });
     }
     else {
@@ -133,9 +144,9 @@ export class AdminDashboardComponent implements OnInit {
   //   window.location.reload();
   // }
 
-  updateProduct(product: any) {
-  this.cs.updateProduct(product.id,product).subscribe();
-  }
+  // updateProduct(product: any) {
+
+  // }
 
   retrieveProducts(): void {
     this.dataService.getAllProducts().snapshotChanges().pipe(
@@ -146,62 +157,66 @@ export class AdminDashboardComponent implements OnInit {
       )
     ).subscribe(data => {
       this.products = data;
-      console.log(data);
+      console.log( this.products,"products");
     });
   }
   saveProduct(): void {
     this.dataService.createProducts(this.productForm.value).then(() => {
-      console.log('Created new item successfully!');
+      this.toast.success("Product added") 
+      console.log(1);
+      this.productForm.reset();
     });
   }
 
-  // updateProduct(pro:Products): void {
-  //   if (pro.id) {
-  //     this.dataService.updateProducts(pro.id.toString(), pro)
-  //       .then(() => console.log('Created new item successfully!'))
-  //       .catch(err => console.log(err));
-  //   }
-  // }
 
-  deleteProduct(id: number = 0): void {
+  deleteProduct(id: string): void {
     if (id) {
       this.dataService.deleteProducts(id.toString())
         .then(() => {
-          console.log('Created new item successfully!');
+          this.toast.success("Product deleted");
         })
-        .catch(err => console.log(err));
+        .catch(err => this.toast.error(err)
+       );
+    }
+    else{
+      this.toast.error("Something went wrong");
     }
   }
   //calling modal and setting values for updating
 
   editProductDetails(pro: any) {
-    this.product = pro;
-    this.productForm.setValue(this.product);
+    // this.product = pro;
+    // this.productForm.setValue(this.product);
+    // console.log(this.productForm,"pro",pro,"pro2",this.product)
+
+    const abs: any = {
+      id: pro.id,
+      productImage: pro.productImage,
+      productName: pro.productName,
+      price: pro.price,
+      key:pro.key
+    }
+
+    this.productForm2.setValue(abs);
+
+    console.log(this.product);
+
   }
 
   //update items in products
-
-
-  // updateProduct(product: any) {
-
-  //   console.log(product);
-
-  //   if(this.productForm.valid){
-
-  //   this.cs.updateProduct(product.id, product).subscribe(res => {
-
-  //     this.toast.success("Product updated");
-
-  //     this.productForm.reset();
-
-  //     this.modalRef?.hide()
-
-  //     this.getProducts();
-
-  //   },(err)=>{
-
-  //     this.toast.error("Something went wrong")
-
-  //   }
+  updateProduct(pro:any): void {
+    if (pro.key) {
+      console.log(pro)
+      this.dataService.updateProducts(pro.key, pro)
+        .then(() =>{this.toast.success("Updated")
+        console.log(2);
+        this.productForm.reset();
+      })
+        .catch(err => console.log(err));
+        
+    }
+    this.productForm.reset();
+    // this.toast.error("Something went wrong")
+  }
 }
 

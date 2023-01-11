@@ -83,8 +83,8 @@ export class DataService {
   //   return this.cartsRef.update(id, value);
   // }
 
-  deleteCarts(id: string): Promise<void> {
-    return this.cartsRef.remove(id);
+  deleteCarts(key: string): Promise<void> {
+    return this.cartsRef.remove(key);
   }
 
   // deleteAllCarts(): Promise<void> {
@@ -99,7 +99,7 @@ export class DataService {
   }
   //#endregion
 
-  get UserId(): any {
+  getUserId(): string {
     const user = JSON.parse(localStorage.getItem('user')!);
     // console.log(user);
     return user !== null && user.emailVerified !== false ? user.uid : "";

@@ -1,34 +1,48 @@
-
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
-        </div>
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
-        </div>
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-        <!-- Calling GoogleAuth Api from AuthService -->
-        <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Log in with Google
+<div class="container">
+  <h1 style="color: #ff7b54; text-align: center; font-size: 30px; font-family: serif; padding-top: 0.5em;"><b>Login</b></h1>
+  <div class="parent">
+    <form [formGroup]="regform" style="margin: 50px; height: 400px">
+      
+      <div>
+        <mat-form-field appearance="fill">
+          <input  matInput placeholder="Enter userName" formControlName="userName" #userName/>
+          <mat-icon class="material-icons" matSuffix>people</mat-icon>
+          <mat-error> Please enter a valid email address</mat-error>
+        </mat-form-field>
+      </div>
+  
+     
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" #userPassword />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
-        </div>
-        <div class="forgotPassword">
-          <span style="color: blue;" routerLink="/forgot-password">Forgot Password?</span>
-        </div>
+        </mat-form-field>
       </div>
-      <div class="redirectToLogin">
-        <span>Don't have an account?<span class="redirect" style="color: blue;" routerLink="/register"> Sign Up</span></span>
+  
+      <div>
+        <!-- <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="onSubmit()">Login </button> -->
+          <input style="background-color: rgb(237, 206, 190); width: 88%;" type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
       </div>
-    </div>
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <br>
+      <div class="formGroup">
+        <button style="background-color: rgb(244, 203, 183); width: 88%;" type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fa-brands fa-google"></i>
+          Log in with Google
+        </button>
+      </div>
+      <br>
+      <div class="forgotPassword">
+        <span style="color: rgb(244, 244, 250);" routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+    
+      <br>
+      <span style="color: white;">Don't have an account ? <a href="register" style="color:rgb(0, 60, 255);">Register here</a></span>
+      <router-outlet></router-outlet>
+    </form>
+  </div>
   </div>

@@ -33,6 +33,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environment/environment';
+import { UPIComponent } from './Dialogs/upi/upi.component';
+import { PlaceOrderComponent } from './Dialogs/place-order/place-order.component';
+import { RemoveCouponComponent } from './Dialogs/remove-coupon/remove-coupon.component';
+import { CancelOrderComponent } from './Dialogs/cancel-order/cancel-order.component';
+import { CardComponent } from './Dialogs/card/card.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,12 @@ import { environment } from 'src/environment/environment';
     CustomerDashboardComponent,
     CartComponent,
     MenuComponent,
-    SignInComponent
+    SignInComponent,
+    UPIComponent,
+    PlaceOrderComponent,
+    RemoveCouponComponent,
+    CancelOrderComponent,
+    CardComponent
   ],
   imports: [
     AngularFireAuthModule,

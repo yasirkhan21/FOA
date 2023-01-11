@@ -1,4 +1,5 @@
-<div class="cartbg">
+<div class="row">
+<div class="cartbg ">
 <div style="background-color: white;">
   <span>
     <h1 style=" text-align: center">
@@ -8,7 +9,7 @@
   >
 </div>
 <hr />
-<div class="card mb-3 cart" style="max-width: 540px" *ngFor="let item of cartList">
+<div class="card mb-3 cart col-md-6" style="max-width: 540px" *ngFor="let item of cartList">
   <div class="row g-0">
     <div class="col-md-4">
       <img
@@ -28,18 +29,26 @@
         <p class="card-text">
           <button
             mat-flat-button
-            (click)="removeCartItem(item.id)"
+            (click)="removeCartItem(item.key)"
             color="warn">
             Remove Item
           </button>
           <button
           mat-flat-button
-          color="warn" style="margin-left: 2%;">
+          color="warn" style="margin-left: 2%;" routerLink="/billing">
           CheckOut</button
         >
         </p>
       </div>
     </div>
   </div>
+
 </div>
+
+</div>
+<div>
+  <h1 *ngIf="cartList.length==0">Empty Card</h1>
+  <button mat-flat-button color="warn" routerLink="/menu" >Add items</button>
+</div>
+
 </div>
