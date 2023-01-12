@@ -185,10 +185,7 @@ export class AdminDashboardComponent implements OnInit {
   //calling modal and setting values for updating
 
   editProductDetails(pro: any) {
-    // this.product = pro;
-    // this.productForm.setValue(this.product);
-    // console.log(this.productForm,"pro",pro,"pro2",this.product)
-
+   
     const abs: any = {
       id: pro.id,
       productImage: pro.productImage,

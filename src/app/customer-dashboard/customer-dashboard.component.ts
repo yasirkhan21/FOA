@@ -31,8 +31,6 @@ export class CustomerDashboardComponent {
   product!: Products[];
   resturant!: Restaurants[];
 
-
-
   ngOnInit(): void {
     this.productForm = this.fb.group({
       productName: ['',],

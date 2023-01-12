@@ -8,6 +8,8 @@
       <mat-icon>restaurant</mat-icon>
     </mat-card-header>
 
+    <span>Thank you for order <strong>{{user?.displayName?user?.displayName:user?.email}}</strong></span>
+
     <div *ngFor="let item of cartList">
       <mat-card-content>
         <div>
@@ -180,7 +182,7 @@
       class="createUserBtn"
       color="warn"
       type="submit"
-      (click)="openDialog5()"
+      (click)="openDialog()"
     >
       Place Order
     </button>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -42,17 +42,14 @@ getCartItem():Observable<any[]>{
 removeCart(id:number){
 return this.http.delete(this.url+"/Cart/"+id)
 }
+ sub!:Subject<any>;
+approve:boolean=false;
+ approval(data:boolean){
+this.approve=data;
+this.sub.next(data);
+ }
 }
-// registerSave(data: any)
-// {
-//   return this.http.post<any>(this.url + "/register", data)
-// }
 
-// loginGetData(): Observable<any[]>
-// {
-//   return this.http.get<any[]>("http://localhost:3000/register");
-// }
- 
 
 
 

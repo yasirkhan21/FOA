@@ -49,7 +49,8 @@ export class AuthService {
         });
       })
       .catch((error) => {
-        window.alert(error.message);
+        // window.alert(error.message);
+        this.toast.error(error.message)
       });
   }
   // Sign up with email/password
@@ -64,7 +65,8 @@ export class AuthService {
         // console.log(result.user)
       })
       .catch((error) => {
-        window.alert(error.message);
+        // window.alert(error.message);
+        this.toast.error(error.message);
       });
   }
   // Send email verfificaiton when new user sign up
@@ -107,7 +109,7 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.toast.success("User login sucessfully");
+        // this.toast.success("User login sucessfully");
         this.router.navigate(['home']);
         this.SetUserData(result.user);
       })
