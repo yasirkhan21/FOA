@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
     });
   }
 
-  removeCartItem(key: string): void {
+  removeCartItem(key: string): void { 
     console.log(key);
     if (key) {
       this.dataService.deleteCarts(key.toString())

@@ -40,16 +40,6 @@ export class RegisterComponent implements OnInit {
     textValue: ''
   }
 
-  onKeyUp(event: any): void {
-    this.numberOfCharacters1 = event.target.value.length;
-
-    if (this.numberOfCharacters1 > this.maxNumberOfCharacters) {
-      event.target.value = event.target.value.slice(0, this.maxNumberOfCharacters);
-      this.numberOfCharacters1 = this.maxNumberOfCharacters;
-      window.alert("maximum limit exceeded");
-    }
-  }
-
   onSubmit() {
     this.authService.SignUp(this.regform.value.email, this.regform.value.password)
     const user = JSON.parse(localStorage.getItem('user')!);
