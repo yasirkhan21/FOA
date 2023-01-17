@@ -5,6 +5,7 @@ import { DataService } from '../data.service';
 import { Products } from '../shared/services/products';
 import { Carts } from '../shared/services/carts';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  constructor(private cs: ServiceService, private toast: ToastrService, private dataService: DataService) { }
+  constructor(private cs: ServiceService, private toast: ToastrService, private dataService: DataService, public authService: AuthService) { }
   product!: Products[];
   cartItem!: Carts;
   ngOnInit(): void {
@@ -30,26 +31,55 @@ export class MenuComponent implements OnInit {
   //   });
   // }
 
+  // addtoCart(pro: Products): void {
+  //   console.log(pro);
+
+  //   const car: Carts = {
+  //     price: pro.price,
+  //     productImage: pro.productImage,
+  //     productName: pro.productName,
+  //     userId: this.dataService.getUserId()
+  //   }
+  //   console.log(car);
+  //   if (true) {
+  //     this.dataService.createCarts(car).then(() => {
+  //       this.toast.success("Item added")
+  //       console.log('Created new item successfully!');
+  //     });
+  //   }
+  //   else{
+  //     this.toast.warning("Please login first");
+  //   }
+  // }
+
   addtoCart(pro: Products): void {
-    console.log(pro);
-    // this.cartItem.userId = this.dataService.getUserId();
+
     const car: Carts = {
+
       price: pro.price,
+
       productImage: pro.productImage,
+
       productName: pro.productName,
+
       userId: this.dataService.getUserId()
+
     }
-    console.log(car);
-    if (true) {
+
+    if (this.authService.isLoggedIn) {
+
       this.dataService.createCarts(car).then(() => {
+
         this.toast.success("Item added")
-        console.log('Created new item successfully!');
+
       });
-    }
-    else{
+
+    } else {
       this.toast.warning("Please login first");
     }
+
   }
+
 
   retrieveProducts(): void {
     this.dataService.getAllProducts().snapshotChanges().pipe(
